@@ -1,8 +1,10 @@
-# EcoClean Pro
+# EcoClean
 
-EcoClean Pro est une application web moderne offrant des services de nettoyage professionnel. L'application est construite avec React, TypeScript, et Tailwind CSS.
+**Version 1.0.0**
 
-## Technologies utilisées
+EcoClean Pro is a modern web application that provides professional cleaning services. This application is designed to offer a seamless user experience for both residential and commercial clients, allowing them to easily book services, manage appointments, and get quotes. Built with a robust and modern technology stack, EcoClean Pro ensures reliability, scalability, and a user-friendly interface.
+
+## Technologies
 
 - React 18
 - TypeScript
@@ -13,51 +15,51 @@ EcoClean Pro est une application web moderne offrant des services de nettoyage p
 
 ## Installation
 
-1. Clonez le repository :
+1. Clone the repository:
 ```bash
 git clone [URL_DU_REPO]
 ```
 
-2. Installez les dépendances :
+2. Install the dependencies:
 ```bash
-npm install
+ppm install
 ```
 
-3. Lancez le serveur de développement :
+3. Start the development server:
 ```bash
-npm run dev
+ppm run dev
 ```
 
-## Scripts disponibles
+## Available Scripts
 
-- `npm run dev` : Lance le serveur de développement
-- `npm run build` : Compile le projet pour la production
-- `npm run preview` : Prévisualise la version de production
-- `npm run lint` : Lance le linter
+- `ppm run dev`: Starts the development server
+- `ppm run build`: Compiles the project for production
+- `ppm run preview`: Previews the production build
+- `ppm run lint`: Runs the linter
 
-## Structure du projet
+## Project Structure
 
 ```
 src/
-  ├── components/     # Composants réutilisables
-  ├── pages/         # Pages de l'application
-  ├── data/          # Données statiques
-  ├── styles/        # Styles globaux
-  └── utils/         # Utilitaires
+  ├── components/     # Reusable components
+  ├── pages/         # Application pages
+  ├── data/          # Static data
+  ├── styles/        # Global styles
+  └── utils/         # Utilities
 ```
 
-## Fonctionnalités
+## Features
 
-- Présentation des services de nettoyage
-- Pages détaillées pour chaque service
-- Formulaire de contact
-- Design responsive
-- Animations fluides
+- Presentation of cleaning services
+- Detailed pages for each service
+- Contact form
+- Responsive design
+- Smooth animations
 
 ## Contribution
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request.
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-## Licence
+## License
 
-Ce projet est sous licence MIT.
+This project is licensed under the MIT License.
