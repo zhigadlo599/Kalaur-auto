@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
     { label: "Nettoyage Bureaux", href: "/services/bureaux" },
     { label: "Nettoyage Cliniques", href: "/services/cliniques" },
     { label: "Nettoyage Vitrerie", href: "/services/vitrerie" },
-    { label: "Nettoyage après Sinistres", href: "/services/sinistres" }
+    { label: "Прибирання після надзвичайних подій", href: "/services/sinistres" }
   ];
 
   const usefulLinks: FooterLink[] = [

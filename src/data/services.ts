@@ -159,7 +159,7 @@ export const services: Service[] = [
   },
   {
     id: 'sinistres',
-    title: "Nettoyage après Sinistres",
+    title: "Прибирання після надзвичайних подій",
     description: "Remise en état après incendie, inondation ou dégât matériel important.",
     icon: Flame,
     features: [
