@@ -353,7 +353,7 @@ const Testimonials = () => {
                 scale: { duration: 0.2 },
                 filter: { duration: 0.2 }
               }}
-              className="absolute top-0 left-0 w-full"
+              className="absolute top-0 left-0 w-full z-10"
             >
               <Card className="bg-white/90 backdrop-blur-xl border-eco-green-100/50 shadow-xl">
                 <CardContent className="p-4 sm:p-6 md:p-8">
@@ -390,7 +390,7 @@ const Testimonials = () => {
             </motion.div>
           </AnimatePresence>
 
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex justify-center gap-4 mt-8 relative z-20">
             <Button
               onClick={handlePrev}
               variant="outline"
@@ -409,13 +409,13 @@ const Testimonials = () => {
             </Button>
           </div>
           {/* Dots navigation */}
-          <div className="mt-6 flex justify-center gap-2" role="tablist" aria-label="Testimonial navigation">
+          <div className="mt-6 flex justify-center gap-2 relative z-20" role="tablist" aria-label="Testimonial navigation">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 type="button"
                 onClick={() => { setIsAutoPlaying(false); setCurrentIndex(i); }}
-                className={`h-3 w-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-eco-green-300 ${currentIndex === i ? 'bg-eco-green-600' : 'bg-white border border-eco-green-200'}`}
+                className={`h-3 w-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-eco-green-300 ${currentIndex === i ? 'bg-eco-green-600' : 'bg-eco-green-50 border border-eco-green-200'}`}
                 aria-current={currentIndex === i ? 'true' : undefined}
                 aria-label={`Перейти до відгуку ${i + 1}`}
               />
