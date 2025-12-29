@@ -35,11 +35,11 @@ const ServicePage = () => {
     return (
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 bg-gradient-to-br from-slate-50 to-white">
         <div className="text-center max-w-md p-8 rounded-xl bg-white shadow-lg border border-slate-100">
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">Service non trouvé</h1>
-          <p className="text-slate-600 mb-6">Le service que vous recherchez n'existe pas ou a été déplacé.</p>
+          <h1 className="text-3xl font-bold text-slate-800 mb-4">Послуга не знайдена</h1>
+          <p className="text-slate-600 mb-6">Послуга, яку ви шукаєте, не існує або була переміщена.</p>
           <Link to="/">
-            <Button variant="outline" className="gap-2 group">
-              Retour à l'accueil
+              <Button variant="outline" className="gap-2 group">
+              Повернутися на головну
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
@@ -98,7 +98,7 @@ const ServicePage = () => {
               backgroundPosition: 'center',
             }}
           >
-            {/* Gradient Overlay - Plus foncé sur mobile pour une meilleure lisibilité */}
+            {/* Градієнтний оверлей — темніший на мобільних для кращої читабельності */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/95" />
             
             {/* Content */}
@@ -154,7 +154,7 @@ const ServicePage = () => {
                       className="w-full sm:w-auto bg-black/50 hover:bg-black/60 border border-white/50 text-white rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 text-xs sm:text-sm md:text-base font-medium transition-all duration-300 group"
                     >
                       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-                        Découvrir le Processus
+                        Дізнатися про процес
                         <ArrowDown className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 transition-transform group-hover:translate-y-1" />
                       </span>
                     </Button>
@@ -201,7 +201,7 @@ const ServicePage = () => {
                 <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-eco-green-50 flex items-center justify-center">
                   <Check className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-eco-green-600" />
                 </div>
-                <h3 className="font-semibold text-sm sm:text-base md:text-lg text-slate-800">Avantage {index + 1}</h3>
+                <h3 className="font-semibold text-sm sm:text-base md:text-lg text-slate-800">Перевага {index + 1}</h3>
               </div>
               <p className="text-xs sm:text-sm md:text-base text-slate-600">{benefit}</p>
             </motion.div>
@@ -223,7 +223,7 @@ const ServicePage = () => {
                 <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-eco-green-50 flex items-center justify-center">
                   <Check className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-eco-green-600" />
                 </div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800">Nos Avantages Clés</h2>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800">Наші ключові переваги</h2>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
@@ -253,7 +253,7 @@ const ServicePage = () => {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-eco-green-50 flex items-center justify-center">
                   <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-eco-green-600" />
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-800">Notre Processus</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-800">Наш процес</h2>
               </div>
               
               <div className="relative">
@@ -270,8 +270,8 @@ const ServicePage = () => {
                         <span className="text-eco-green-700 font-medium text-xs sm:text-sm lg:text-base">{index + 1}</span>
                       </div>
                       <div className="bg-slate-50 rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-slate-100 transition-all duration-200">
-                        <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">
-                          Étape {index + 1}
+                          <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">
+                          Крок {index + 1}
                         </h3>
                         <p className="text-sm sm:text-base text-slate-600">{step}</p>
                       </div>
@@ -293,7 +293,7 @@ const ServicePage = () => {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center">
                   <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-eco-green-600" />
                 </div>
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Ce service comprend</h2>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Ця послуга включає</h2>
               </div>
               
               <ul className="space-y-2 sm:space-y-3">
@@ -321,7 +321,7 @@ const ServicePage = () => {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-eco-green-50 flex items-center justify-center">
                   <Leaf className="h-4 w-4 sm:h-5 sm:w-5 text-eco-green-600" />
                 </div>
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Nos Outils Professionnels</h2>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Наше професійне обладнання</h2>
               </div>
               
               <div className="grid gap-2 sm:gap-3">
