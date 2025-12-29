@@ -70,6 +70,8 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Головна", href: "/" },
+    { label: "Магазин", href: "/shop" },
+    { label: "Кошик", href: "/cart" },
     { label: "Про нас", href: "/#about" },
     { 
       label: "Послуги", 
@@ -303,6 +305,20 @@ const Navbar = () => {
                   className="block text-sm sm:text-base font-medium text-gray-900 hover:text-eco-green-600 transition-colors duration-200 w-full text-left py-1.5 hover:bg-eco-green-50/50 rounded-lg px-2"
                 >
                   Головна
+                </motion.button>
+                <motion.button
+                  whileHover={{ x: 5 }}
+                  onClick={() => handleNavigation('/shop')}
+                  className="block text-sm sm:text-base font-medium text-gray-900 hover:text-eco-green-600 transition-colors duration-200 w-full text-left py-1.5 hover:bg-eco-green-50/50 rounded-lg px-2"
+                >
+                  Магазин
+                </motion.button>
+                <motion.button
+                  whileHover={{ x: 5 }}
+                  onClick={() => handleNavigation('/cart')}
+                  className="block text-sm sm:text-base font-medium text-gray-900 hover:text-eco-green-600 transition-colors duration-200 w-full text-left py-1.5 hover:bg-eco-green-50/50 rounded-lg px-2"
+                >
+                  Кошик
                 </motion.button>
                 <motion.button
                   whileHover={{ x: 5 }}

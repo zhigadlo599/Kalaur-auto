@@ -11,6 +11,9 @@ import NotFound from "./pages/NotFound";
 import LoadingScreen from './components/LoadingScreen';
 import ServicePage from './pages/services/ServicePage';
 import Layout from './components/Layout';
+import Shop from './pages/Shop';
+import Cart from './pages/Cart';
+import { CartProvider } from '@/contexts/CartContext';
 
 const ScrollManager = () => {
   const { pathname, hash } = useLocation();
@@ -62,19 +65,23 @@ const App = () => {
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <BrowserRouter>
-              <ScrollManager />
-              <Routes>
-                <Route element={<Layout />}>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/blog/:slug" element={<BlogPost />} />
-                  <Route path="/services/:id" element={<ServicePage />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Route>
-              </Routes>
-            </BrowserRouter>
+            <CartProvider>
+              <BrowserRouter>
+                <ScrollManager />
+                <Routes>
+                  <Route element={<Layout />}>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/shop" element={<Shop />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog/:slug" element={<BlogPost />} />
+                    <Route path="/services/:id" element={<ServicePage />} />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Route>
+                </Routes>
+              </BrowserRouter>
+            </CartProvider>
           </TooltipProvider>
         </div>
       )}
