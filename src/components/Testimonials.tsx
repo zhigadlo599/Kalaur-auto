@@ -348,39 +348,42 @@ const Testimonials = () => {
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
-                scale: { duration: 0.2 },
-                filter: { duration: 0.2 }
-              }}
-              className="absolute top-0 left-0 w-full z-10"
+          
+          {/* Controls moved below the carousel to avoid overlapping other blocks */}
+        </div>
+        <div className="mt-6 flex flex-col items-center z-20">
+          <div className="flex gap-4">
+            <Button
+              onClick={handlePrev}
+              variant="outline"
+              size="icon"
+              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-eco-green-200 hover:border-eco-green-500 hover:bg-eco-green-50"
             >
-              <Card className="bg-white/90 backdrop-blur-xl border-eco-green-100/50 shadow-xl">
-                <CardContent className="p-4 sm:p-6 md:p-8">
-                  <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-eco-green-100 shadow-lg flex-shrink-0">
-                      <img 
-                        src={testimonials[currentIndex].image}
-                        alt={testimonials[currentIndex].name}
-                        className="w-full h-full object-cover"
-                        loading="eager"
-                      />
-                    </div>
-                    <div className="flex-1 text-center md:text-left min-w-0 px-2 sm:px-0">
-                      <div className="flex justify-center md:justify-start gap-1 mb-2 sm:mb-3">
-                        {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-eco-green-500 text-eco-green-500" />
-                        ))}
-                      </div>
-                      <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-3 sm:mb-4 italic leading-relaxed break-words max-w-[280px] sm:max-w-none mx-auto md:mx-0">
-                        "{testimonials[currentIndex].content}"
-                      </p>
-                      <div>
-                        <h4 className="font-bold text-gray-900 text-base sm:text-lg md:text-xl mb-1">
-                          {testimonials[currentIndex].name}
-                        </h4>
-                        <p className="text-eco-green-600 text-xs sm:text-sm md:text-base">
-                          {testimonials[currentIndex].role}
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-eco-green-600" />
+            </Button>
+            <Button
+              onClick={handleNext}
+              variant="outline"
+              size="icon"
+              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-eco-green-200 hover:border-eco-green-500 hover:bg-eco-green-50"
+            >
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-eco-green-600" />
+            </Button>
+          </div>
+
+          <div className="mt-4 flex gap-2" role="tablist" aria-label="Testimonial navigation">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => { setIsAutoPlaying(false); setCurrentIndex(i); }}
+                className={`h-3 w-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-eco-green-300 ${currentIndex === i ? 'bg-eco-green-600' : 'bg-eco-green-50 border border-eco-green-200'}`}
+                aria-current={currentIndex === i ? 'true' : undefined}
+                aria-label={`Перейти до відгуку ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
                         </p>
                       </div>
                     </div>
