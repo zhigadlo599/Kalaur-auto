@@ -240,7 +240,7 @@ const Navbar = () => {
               className="ml-2 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 transition-all duration-300 flex items-center bg-eco-green-500 hover:bg-eco-green-600 text-white shadow-[0_4px_14px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] text-sm"
             >
               <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
-              Devis Gratuit
+              Безкоштовний кошторис
             </Button>
           </motion.div>
         </div>
@@ -268,7 +268,7 @@ const Navbar = () => {
             className="lg:hidden fixed top-[60px] sm:top-[72px] left-0 right-0 bg-white/95 backdrop-blur-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] overflow-y-auto max-h-[calc(100vh-60px)] sm:max-h-[calc(100vh-72px)] border-t border-eco-green-100/20"
           >
             <div className="container mx-auto px-4 py-4 sm:py-6 space-y-4 sm:space-y-6">
-              {/* Accueil et À propos en premier */}
+              {/* Головна та Про нас першими */}
               <div className="space-y-2">
                 <motion.button
                   whileHover={{ x: 5 }}

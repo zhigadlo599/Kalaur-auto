@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
   ];
 
   const usefulLinks: FooterLink[] = [
-    { label: "À propos", href: "/#about" },
-    { label: "Témoignages", href: "/#testimonials" },
-    { label: "Contact", href: "/#contact" },
-    { label: "Devis Gratuit", href: "/#contact" }
+    { label: "Про нас", href: "/#about" },
+    { label: "Відгуки", href: "/#testimonials" },
+    { label: "Контакти", href: "/#contact" },
+    { label: "Безкоштовний кошторис", href: "/#contact" }
   ];
 
   const handleNavigation = (href: string) => {

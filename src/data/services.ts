@@ -168,7 +168,7 @@ export const services: Service[] = [
       "Remise en état complète",
       "Traitement des dégâts"
     ],
-    cta: "En savoir plus sur nos interventions post-sinistre",
+    cta: "Дізнатися більше про наші роботи після надзвичайних подій",
     longDescription: "Notre service de nettoyage post-sinistre intervient rapidement pour remettre en état vos locaux après un sinistre. Nous disposons des équipements et du savoir-faire nécessaires pour traiter tous types de dégâts.",
     benefits: [
       "Intervention rapide",
@@ -274,7 +274,7 @@ export const services: Service[] = [
       "Équipements spécialisés",
       "Personnel qualifié"
     ],
-    cta: "En savoir plus sur nos services de décontamination",
+    cta: "Дізнатися більше про наші послуги з деконтамінації",
     longDescription: "Notre service de décontamination intervient dans les environnements sensibles pour éliminer les substances dangereuses. Nous suivons des protocoles stricts pour garantir la sécurité de tous.",
     benefits: [
       "Expertise technique",

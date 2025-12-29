@@ -141,7 +141,7 @@ const ServicePage = () => {
                       className="w-full sm:w-auto bg-white hover:bg-white/90 text-eco-green-800 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 text-xs sm:text-sm md:text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
                     >
                       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-                        Demander un Devis
+                        Отримати кошторис
                         <ArrowRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1" />
                       </span>
                     </Button>
