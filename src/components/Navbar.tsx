@@ -161,16 +161,36 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <div className="absolute inset-0 bg-eco-green-500/10 rounded-full blur-xl group-hover:bg-eco-green-500/20 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-eco-green-500/10 rounded-2xl blur-xl group-hover:bg-eco-green-500/20 transition-all duration-300"></div>
               <div className="relative z-10 flex items-center gap-2">
-                <div className="h-8 sm:h-10 md:h-12 w-8 sm:w-10 md:w-12 bg-gradient-to-br from-eco-green-500 to-eco-green-700 rounded-lg flex items-center justify-center shadow-lg">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                <div className="h-8 sm:h-10 md:h-12 w-8 sm:w-10 md:w-12 bg-gradient-to-br from-eco-green-400 via-eco-green-500 to-eco-green-700 rounded-2xl flex items-center justify-center shadow-xl relative overflow-hidden group-hover:shadow-2xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white relative z-10" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="48" r="7" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                    <circle cx="20" cy="48" r="3" fill="currentColor"/>
+                    <circle cx="60" cy="48" r="7" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                    <circle cx="60" cy="48" r="3" fill="currentColor"/>
+                    
+                    <path d="M 13 48 L 13 38 L 8 38 L 8 48" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M 27 48 L 27 38 L 53 38 L 53 48" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M 67 48 L 67 38 L 72 38 L 72 48" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    
+                    <rect x="8" y="20" width="24" height="18" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                    <line x1="20" y1="20" x2="20" y2="38" stroke="currentColor" strokeWidth="2.5"/>
+                    
+                    <rect x="10" y="23" width="8" height="10" rx="1" fill="currentColor" opacity="0.4"/>
+                    <rect x="22" y="23" width="8" height="10" rx="1" fill="currentColor" opacity="0.4"/>
+                    
+                    <rect x="34" y="15" width="38" height="23" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                    <line x1="48" y1="15" x2="48" y2="38" stroke="currentColor" strokeWidth="2" opacity="0.6"/>
+                    <line x1="58" y1="15" x2="58" y2="38" stroke="currentColor" strokeWidth="2" opacity="0.6"/>
+                    
+                    <path d="M 8 20 L 12 12 L 28 12 L 32 20" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="none"/>
                   </svg>
                 </div>
                 <div className="hidden sm:flex flex-col">
-                  <span className="text-lg font-bold text-gray-900 leading-tight">Kalaur</span>
-                  <span className="text-xs font-semibold text-eco-green-600 leading-tight">SERVICE</span>
+                  <span className="text-lg font-bold text-gray-900 leading-tight tracking-tight">Kalaur</span>
+                  <span className="text-xs font-semibold text-eco-green-600 leading-tight tracking-wider">SERVICE</span>
                 </div>
               </div>
             </motion.div>

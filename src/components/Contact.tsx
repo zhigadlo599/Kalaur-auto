@@ -321,10 +321,10 @@ const Contact = () => {
                 
                 <div className="space-y-6">
                   {[
-                    { icon: Phone, label: "Телефон", value: "+33 (0) 7 44 53 10 08" },
-                    { icon: Mail, label: "Електронна пошта", value: "contact@ecocleanpro.fr" },
-                    { icon: MapPin, label: "Адреса", value: "Fleury-Les-Aubrais, 45400" },
-                    { icon: Clock, label: "Графік роботи", value: "8:30 – 19:30 (Пн – Суб)" }
+                    { icon: Phone, label: "Телефон", value: "095 683 72 38" },
+                    { icon: Mail, label: "Електронна пошта", value: "info@kalaur-service.com" },
+                    { icon: MapPin, label: "Адреса", value: "Житомир, вул. Парникова, 27" },
+                    { icon: Clock, label: "Графік роботи", value: "09:00 – 18:00 (Вт – Сб)" }
                   ].map((item, index) => (
                     <motion.div 
                       key={index}
@@ -515,13 +515,13 @@ const Contact = () => {
                 <MapPin className="h-6 w-6 text-white" />
                 <div>
                   <h3 className="text-xl font-bold text-white">Наша адреса</h3>
-                  <p className="text-white/90 text-sm">м. Житомир, вул. Парникова 18</p>
+                  <p className="text-white/90 text-sm">м. Житомир, вул. Парникова 27</p>
                 </div>
               </div>
             </div>
             <div className="relative w-full h-[400px] md:h-[500px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.8!2d28.6545!3d50.2543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE1JzE1LjUiTiAyOMKwMzknMTYuMiJF!5e0!3m2!1suk!2sua!4v1640000000000!5m2!1suk!2sua"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2541.324!2d28.646701897539774!3d50.28672249798844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDE3JzEyLjIiTiAyOMKwMzgnNDguMSJF!5e0!3m2!1suk!2sua!4v1640000000000!5m2!1suk!2sua"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -539,8 +539,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-700">Телефон</p>
-                    <a href="tel:+380501234567" className="text-eco-green-600 hover:text-eco-green-700 font-medium">
-                      +380 50 123 45 67
+                    <a href="tel:+380956837238" className="text-eco-green-600 hover:text-eco-green-700 font-medium">
+                      095 683 72 38
                     </a>
                   </div>
                 </div>
@@ -550,8 +550,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-700">Email</p>
-                    <a href="mailto:info@kalaur-auto.com" className="text-eco-green-600 hover:text-eco-green-700 font-medium">
-                      info@kalaur-auto.com
+                    <a href="mailto:info@kalaur-service.com" className="text-eco-green-600 hover:text-eco-green-700 font-medium">
+                      info@kalaur-service.com
                     </a>
                   </div>
                 </div>
@@ -561,7 +561,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-700">Графік роботи</p>
-                    <p className="text-gray-600">Пн-Нд: 24/7</p>
+                    <p className="text-gray-600">Вт-Сб: 09:00-18:00</p>
                   </div>
                 </div>
               </div>

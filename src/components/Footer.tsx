@@ -175,14 +175,36 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 border-b border-eco-green-700 pb-8">
           <div className="mb-8 md:mb-0 flex items-center">
-            <div className="h-14 w-auto mr-4">
-              <img src="/logo.png" alt="Eco Clean ProMax Logo" className="h-full" />
+            <div className="h-14 w-14 mr-4 bg-gradient-to-br from-eco-green-400 via-eco-green-500 to-eco-green-700 rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+              <svg className="w-9 h-9 text-white relative z-10" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="48" r="7" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                <circle cx="20" cy="48" r="3" fill="currentColor"/>
+                <circle cx="60" cy="48" r="7" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                <circle cx="60" cy="48" r="3" fill="currentColor"/>
+                
+                <path d="M 13 48 L 13 38 L 8 38 L 8 48" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M 27 48 L 27 38 L 53 38 L 53 48" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M 67 48 L 67 38 L 72 38 L 72 48" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                
+                <rect x="8" y="20" width="24" height="18" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                <line x1="20" y1="20" x2="20" y2="38" stroke="currentColor" strokeWidth="2.5"/>
+                
+                <rect x="10" y="23" width="8" height="10" rx="1" fill="currentColor" opacity="0.4"/>
+                <rect x="22" y="23" width="8" height="10" rx="1" fill="currentColor" opacity="0.4"/>
+                
+                <rect x="34" y="15" width="38" height="23" rx="2" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                <line x1="48" y1="15" x2="48" y2="38" stroke="currentColor" strokeWidth="2" opacity="0.6"/>
+                <line x1="58" y1="15" x2="58" y2="38" stroke="currentColor" strokeWidth="2" opacity="0.6"/>
+                
+                <path d="M 8 20 L 12 12 L 28 12 L 32 20" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" fill="none"/>
+              </svg>
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-2 text-white">EcoClean <span className="text-eco-green-300">ProMax</span></h2>
+              <h2 className="text-3xl font-bold mb-2 text-white">Kalaur <span className="text-eco-green-300">Service</span></h2>
               <p className="text-eco-green-200 max-w-md">
-                Професійні екологічні рішення для прибирання будь-яких приміщень.
-                Ваш надійний партнер у прибиранні, очищенні та дезінфекції, який працює для здоровішого середовища.
+                Професійний сервіс з ремонту та обслуговування вантажних автомобілів.
+                Ваш надійний партнер у технічному обслуговуванні та ремонті вантажівок.
               </p>
             </div>
           </div>
@@ -222,7 +244,7 @@ const Footer: React.FC = () => {
                 <MapPin className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm text-eco-green-100">Fleury-Les-Aubrais, 45400</p>
+                <p className="text-sm text-eco-green-100">Житомир, вул. Парникова, 27</p>
               </div>
             </div>
             
@@ -231,7 +253,7 @@ const Footer: React.FC = () => {
                 <Phone className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm text-eco-green-100">+33 (0) 7 44 53 10 08</p>
+                <p className="text-sm text-eco-green-100">095 683 72 38</p>
               </div>
             </div>
             
@@ -240,7 +262,7 @@ const Footer: React.FC = () => {
                 <Mail className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm text-eco-green-100">contact@ecoclean-promax.com</p>
+                <p className="text-sm text-eco-green-100">info@kalaur-service.com</p>
               </div>
             </div>
             
@@ -250,7 +272,7 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm text-eco-green-100">
-                  8:30 – 19:30 (Понеділок – Субота)
+                  09:00 – 18:00 (Вівторок – Субота)
                 </p>
               </div>
             </div>
@@ -317,7 +339,7 @@ const Footer: React.FC = () => {
               </div>
               
                 <p className="text-eco-green-200 mb-4 text-sm">
-                Підпишіться, щоб отримувати спеціальні пропозиції та новини про наші екологічні послуги.
+                Підпишіться, щоб отримувати спеціальні пропозиції та новини про наші послуги.
               </p>
               
               <div className="relative">
@@ -336,7 +358,7 @@ const Footer: React.FC = () => {
               
                 <div className="mt-4 flex items-center text-xs text-eco-green-300">
                 <Leaf className="h-3 w-3 mr-1" />
-                <span>За кожну підписку — садимо дерево</span>
+                <span>Будьте в курсі нових акцій та пропозицій</span>
               </div>
             </div>
           </div>
@@ -344,7 +366,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-eco-green-700 pt-8 flex flex-col md:flex-row justify-center items-center">
             <p className="text-eco-green-300 text-center">
-            &copy; {new Date().getFullYear()} Eco Clean ProMax. Всі права захищені.
+            &copy; {new Date().getFullYear()} Kalaur Service. Всі права захищені.
           </p>
         </div>
       </div>
