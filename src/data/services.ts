@@ -30,94 +30,94 @@ export const services: Service[] = [
     cta: "Дізнатися більше про прибирання паркінгу",
     longDescription: "Наш сервіс прибирання паркінгів пропонує комплексне рішення для підтримки паркувальних зон у бездоганному стані. Ми використовуємо професійне обладнання та екологічні засоби для досягнення оптимального результату, зберігаючи навколишнє середовище.",
     benefits: [
-      "Amélioration de l'image de votre établissement",
-      "Réduction des risques d'accidents",
-      "Prolongation de la durée de vie des revêtements",
-      "Conformité aux normes d'hygiène"
+      "Покращення іміджу вашого закладу",
+      "Зниження ризику нещасних випадків",
+      "Подовження строку експлуатації покриттів",
+      "Відповідність санітарним нормам"
     ],
-    process: [
-      "Inspection préliminaire des lieux",
-      "Déblayage et préparation de la zone",
-      "Application de produits dégraissants",
-      "Lavage haute pression",
-      "Чистка стін та колон",
-      "Inspection finale"
-    ],
-    equipment: [
-      "Laveuses haute pression",
-      "Balayeuses mécaniques",
-      "Aspirateurs industriels",
-      "Produits dégraissants écologiques"
-    ],
-    color: "from-eco-green-500 to-eco-green-600",
-    bannerImage: "https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&w=1920&q=80"
-  },
-  {
-    id: 'bureaux',
-    title: "Прибирання офісів",
-    description: "Догляд за робочими просторами: робочі місця, підлоги, санвузли, конференц-зали тощо.",
-    icon: Briefcase,
-    features: [
-      "Прибирання робочих місць",
-      "Прибирання санвузлів",
-      "Прибирання конференц-залів",
-      "Догляд за підлогами"
-    ],
-    cta: "Дізнатися про наші послуги з прибирання офісів",
-    longDescription: "Notre service de nettoyage de bureaux est conçu pour maintenir un environnement de travail sain et agréable. Nous adaptons nos interventions à vos horaires et à vos besoins spécifiques.",
-    benefits: [
-      "Environnement de travail sain",
-      "Productivité accrue",
-      "Image professionnelle",
-      "Flexibilité des horaires"
-    ],
-    process: [
-      "Дезінфекція контактних поверхонь",
-      "Прибирання робочих місць",
-      "Догляд за загальними зонами",
-      "Прибирання санвузлів",
-      "Догляд за підлогами"
-    ],
-    equipment: [
-      "Produits désinfectants écologiques",
-      "Matériel de microfibre",
-      "Aspirateurs HEPA",
-      "Monobrosses"
-    ],
-    color: "from-eco-green-600 to-eco-green-700",
+    {
+      id: 'parking-cleaning',
+      title: 'Прибирання паркінгів',
+      description: "Прибирання паркінгів і гаражів: видалення плям, миття під високим тиском та регулярне обслуговування.",
+      features: [
+        'Миття внутрішніх підлог',
+        'Знежирення плям від олії',
+        'Прибирання стін і стель',
+        'Антибактеріальна обробка при потребі'
+      ],
+      cta: 'Дізнатися більше про прибирання паркінгів',
+      longDescription: "Ми пропонуємо повне прибирання паркінгів, у тому числі миття під високим тиском, знежирення слідів олії та спеціальні обробки залежно від типу поверхні.",
+      benefits: [
+        'Підвищена безпека',
+        'Відновлення зовнішнього вигляду',
+        'Запобігання структурним пошкодженням',
+        'Економічне обслуговування'
+      ],
+      {
+        id: 'decontamination',
+        title: 'Деконтамінація',
+        description: "Деконтамінація та видалення небезпечних матеріалів: спеціалізовані втручання для небезпечних речовин.",
+        features: [
+          'Оцінка ризиків',
+          'Видалення небезпечних матеріалів',
+          'Відповідність нормам',
+          'Управління відходами'
+        ],
+        cta: "Зв'яжіться з нами для деконтамінації",
+        longDescription: "Ми здійснюємо деконтамінацію забруднених місць, включно з видаленням небезпечних матеріалів і відновленням приміщень відповідно до чинних норм.",
+        benefits: [
+          'Гарантована безпека',
+          'Відповідність регуляціям',
+          "Зниження ризику для здоров'я",
+          'Швидке та безпечне втручання'
+        ],
+        process: [
+          'Початковий діагноз',
+          'Розробка плану втручання',
+          'Контрольоване видалення контамінантів',
+          'Очищення та відновлення',
+          'Утилізація небезпечних відходів'
+        ],
+        equipment: [
+          'Спеціалізовані засоби індивідуального захисту',
+          'Інструменти для видалення',
+          'Системи ізоляції',
+          'Транспорт для вивезення відходів'
+        ]
+      },
     bannerImage: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=80"
   },
   {
     id: 'cliniques',
     title: "Прибирання клінік",
-    description: "Nettoyage et désinfection selon les normes sanitaires strictes en environnement médicalisé.",
+    description: "Прибирання та дезінфекція відповідно до суворих санітарних норм у медичних закладах.",
     icon: Stethoscope,
     features: [
-      "Respect des normes sanitaires",
-      "Désinfection professionnelle",
-      "Nettoyage des zones sensibles",
-      "Protocoles spécifiques"
+      "Відповідність санітарним нормам",
+      "Професійна дезінфекція",
+      "Прибирання чутливих зон",
+      "Спеціалізовані протоколи"
     ],
-    cta: "Notre approche du nettoyage médical",
-    longDescription: "Notre service de nettoyage pour cliniques répond aux exigences strictes du milieu médical. Nous suivons des protocoles rigoureux pour garantir un environnement stérile et sécurisé.",
+    cta: "Дізнатися про наш підхід до медичного прибирання",
+    longDescription: "Наш сервіс прибирання для клінік відповідає суворим вимогам медичного середовища. Ми дотримуємося строгих протоколів для забезпечення стерильного та безпечного середовища.",
     benefits: [
-      "Conformité aux normes sanitaires",
-      "Réduction des risques d'infections",
-      "Environnement sécurisé",
-      "Personnel formé aux protocoles médicaux"
+      "Відповідність санітарним нормам",
+      "Зниження ризику інфекцій",
+      "Безпечне середовище",
+      "Персонал, навчений медичним протоколам"
     ],
     process: [
-      "Évaluation des zones à risque",
-      "Application des protocoles de désinfection",
-      "Nettoyage des zones sensibles",
-      "Vérification des points critiques",
-      "Documentation des interventions"
+      "Оцінка зон ризику",
+      "Застосування протоколів дезінфекції",
+      "Прибирання чутливих зон",
+      "Перевірка критичних точок",
+      "Документування робіт"
     ],
     equipment: [
-      "Produits désinfectants certifiés",
-      "Équipements de protection",
-      "Matériel de nettoyage dédié",
-      "Système de traçabilité"
+      "Сертифіковані дезінфікуючі засоби",
+      "Засоби індивідуального захисту",
+      "Спеціалізоване приладдя для прибирання",
+      "Система відстеження"
     ],
     color: "from-eco-green-500 to-eco-green-600",
     bannerImage: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1920&q=80"
