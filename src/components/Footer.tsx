@@ -43,10 +43,10 @@ const Footer: React.FC = () => {
   };
 
   const services: FooterLink[] = [
-    { label: "Nettoyage Parking", href: "/services/parking" },
-    { label: "Nettoyage Bureaux", href: "/services/bureaux" },
-    { label: "Nettoyage Cliniques", href: "/services/cliniques" },
-    { label: "Nettoyage Vitrerie", href: "/services/vitrerie" },
+    { label: "Прибирання паркінгів", href: "/services/parking" },
+    { label: "Прибирання офісів", href: "/services/bureaux" },
+    { label: "Прибирання клінік", href: "/services/cliniques" },
+    { label: "Миття вітрин", href: "/services/vitrerie" },
     { label: "Прибирання після надзвичайних подій", href: "/services/sinistres" }
   ];
 
@@ -58,20 +58,21 @@ const Footer: React.FC = () => {
   ];
 
   const handleNavigation = (href: string) => {
-    // Si c'est un lien vers la page d'accueil
+    // Якщо це посилання на головну сторінку
     if (href === '/') {
       navigate('/');
       return;
     }
 
-    // Si c'est un lien avec un hash (section de la page d'accueil)
+    // Якщо це посилання з хешем (секція на головній сторінці)
     if (href.includes('#')) {
       const [path, hash] = href.split('#');
       
-      // Si nous ne sommes pas sur la page d'accueil, on y va d'abord
+      // Якщо ми не на головній сторінці, спочатку переходимо на неї
       if (location.pathname !== '/') {
         navigate('/');
         // Attendre que la page soit chargée avant de scroller
+        // Зачекати, поки сторінка завантажиться, перед скролом
         setTimeout(() => {
           const element = document.getElementById(hash);
           if (element) {
@@ -79,7 +80,7 @@ const Footer: React.FC = () => {
           }
         }, 100);
       } else {
-        // Si nous sommes déjà sur la page d'accueil, on scrolle directement
+        // Якщо ми вже на головній сторінці, скролимо напряму
         const element = document.getElementById(hash);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
@@ -88,7 +89,7 @@ const Footer: React.FC = () => {
       return;
     }
 
-    // Pour les autres liens (pages de services)
+    // Для інших посилань (сторінки послуг)
     navigate(href);
   };
 
