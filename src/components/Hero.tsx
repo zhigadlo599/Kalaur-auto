@@ -172,7 +172,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-10 w-full max-w-4xl px-4">
             <FeatureCard icon={CheckCircle} text="Діагностика за 30 хвилин" index={0} />
             <FeatureCard icon={Sparkles} text="Гарантія на всі роботи" index={1} />
-            <FeatureCard icon={CheckCircle} text="Цілодобовий сервіс" index={2} />
+            <FeatureCard icon={CheckCircle} text="Ремонт ходової та підвіски" index={2} />
           </div>
 
           <motion.div

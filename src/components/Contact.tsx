@@ -282,7 +282,7 @@ const Contact = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold mb-4 text-gray-900"
           >
-            Готові перетворити ваш простір?
+            Потрібен ремонт або діагностика вантажного авто?
           </motion.h2>
           <motion.p 
             initial={{ y: 20, opacity: 0 }}
@@ -290,7 +290,7 @@ const Contact = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            Наша команда готова відповісти на всі ваші запитання та підготувати індивідуальне рішення.
+            Підкажемо по вартості, запишемо на сервіс і підберемо рішення під вашу техніку.
           </motion.p>
         </motion.div>
         

@@ -107,14 +107,8 @@ const Navbar = () => {
       
       // Si nous ne sommes pas sur la page d'accueil, on y va d'abord
       if (location.pathname !== '/') {
-        navigate('/');
-        // Attendre que la page soit chargée avant de scroller
-        setTimeout(() => {
-          const element = document.getElementById(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
+        // Navigate with hash so ScrollManager can reliably scroll after render
+        navigate(`${path}#${hash}`);
       } else {
         // Si nous sommes déjà sur la page d'accueil, on scrolle directement
         const element = document.getElementById(hash);
@@ -273,7 +267,6 @@ const Navbar = () => {
                 onClick={() => handleNavigation('/#contact')}
               className="ml-2 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 transition-all duration-300 flex items-center bg-eco-green-500 hover:bg-eco-green-600 text-white shadow-[0_4px_14px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] text-sm"
             >
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
               Безкоштовна діагностика
             </Button>
           </motion.div>
@@ -349,7 +342,7 @@ const Navbar = () => {
               <div className="space-y-2 border-t border-gray-100 pt-4">
                 <div className="font-medium text-gray-900 text-sm sm:text-base px-2">Послуги</div>
                 <div className="pl-4 space-y-2">
-                  {navItems.find(item => item.label === "Services")?.dropdown?.map((subItem, subIndex) => (
+                  {navItems.find(item => item.label === "Послуги")?.dropdown?.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
                       to={subItem.href}
@@ -386,7 +379,6 @@ const Navbar = () => {
                   onClick={() => handleNavigation('/#contact')}
                   className="w-full bg-eco-green-500 hover:bg-eco-green-600 text-white shadow-[0_4px_14px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] transition-all duration-300 text-sm sm:text-base py-2 sm:py-2.5"
                 >
-                  <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   Безкоштовна діагностика
                 </Button>
               </motion.div>
