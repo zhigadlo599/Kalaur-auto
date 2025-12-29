@@ -88,7 +88,7 @@ const Hero = () => {
             minHeight: '100%'
           }}
         >
-          <source src="/eco.mp4" type="video/mp4" />
+          <source src="/grok-video-73dac3bc-eeac-4e66-b4f0-61cd6b523eff.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay Gradient */}
@@ -130,9 +130,9 @@ const Hero = () => {
             animate={{ opacity: 1, transition: { duration: 0.8 } }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4"
           >
-            <span className="reveal-text inline-block translate-y-8 opacity-0 transition-all duration-700 ease-out">Прибирання</span>{' '}
+            <span className="reveal-text inline-block translate-y-8 opacity-0 transition-all duration-700 ease-out">Ремонт</span>{' '}
             <span className="inline-block relative text-emerald-300">
-              Професійне прибирання
+              Вантажних Автомобілів
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-emerald-400/50 rounded-full scale-x-0 origin-left transition-transform delay-1000 duration-700 ease-out reveal-underline"></span>
             </span>
           </motion.h1>
@@ -142,7 +142,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0, transition: { delay: 0.7, duration: 0.8 } }}
             className="text-xl sm:text-2xl text-white font-semibold tracking-wide mt-2"
           >
-            Екологічно та ефективно
+            Професійний сервіс | Надійність | Якість
           </motion.p>
 
           {/* Description */}
@@ -151,14 +151,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0, transition: { delay: 0.9, duration: 0.8 } }}
             className="text-lg text-white text-center mt-6 max-w-2xl px-4"
           >
-            Інноваційні рішення для прибирання, дружні до довкілля, для будь-яких ваших приміщень.
+            Повний спектр послуг з обслуговування та ремонту вантажної техніки. Досвідчені майстри, сучасне обладнання, оригінальні запчастини.
           </motion.p>
 
           {/* Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-10 w-full max-w-4xl px-4">
-            <FeatureCard icon={CheckCircle} text="100% екологічні рішення" index={0} />
-            <FeatureCard icon={Sparkles} text="Бездоганні результати" index={1} />
-            <FeatureCard icon={CheckCircle} text="Індивідуальний підхід" index={2} />
+            <FeatureCard icon={CheckCircle} text="Діагностика за 30 хвилин" index={0} />
+            <FeatureCard icon={Sparkles} text="Гарантія на всі роботи" index={1} />
+            <FeatureCard icon={CheckCircle} text="Цілодобовий сервіс" index={2} />
           </div>
 
           {/* CTA Buttons */}
@@ -170,9 +170,9 @@ const Hero = () => {
             <Button 
               size="lg"
               className="bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-full px-8 py-6 shadow-lg transition-all hover:shadow-emerald-400/30 hover:translate-y-0.5"
-              aria-label="Замовити кошторис"
+              aria-label="Безкоштовна діагностика"
             >
-              Замовити кошторис
+              Безкоштовна діагностика
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
 

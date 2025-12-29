@@ -196,3 +196,27 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px, rgba(0, 0, 0, 0.06) 0px 2px 8px;
   transform: translateY(-2px);
 }
+
+/* Blog post special blocks */
+.warning {
+  @apply bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg my-6;
+  color: #854d0e;
+}
+
+.tip {
+  @apply bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg my-6;
+  color: #1e40af;
+}
+
+/* Blog content table styles */
+.prose table {
+  @apply w-full border-collapse my-6;
+}
+
+.prose th {
+  @apply bg-eco-green-100 p-3 text-left font-semibold border border-gray-300;
+}
+
+.prose td {
+  @apply p-3 border border-gray-300;
+}

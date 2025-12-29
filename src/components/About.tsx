@@ -85,39 +85,39 @@ const About = () => {
   const features = [
     {
       icon: <Shield className="h-6 w-6" />,
-      title: "Надійний сервіс",
-      description: "Кваліфіковані команди, готові виконати роботи у вказані терміни."
+      title: "Професійний сервіс",
+      description: "Досвідчені механіки з багаторічним досвідом роботи."
     },
     {
       icon: <Leaf className="h-6 w-6" />,
-      title: "Екологічні засоби",
-      description: "Використання засобів, що поважають довкілля, для відповідального прибирання."
+      title: "Сучасне обладнання",
+      description: "Діагностика та ремонт на новітньому обладнанні."
     },
     {
       icon: <Clock className="h-6 w-6" />,
-      title: "Доступність 24/7",
-      description: "Служба підтримки доступна цілодобово для невідкладних потреб."
+      title: "Цілодобова підтримка",
+      description: "Евакуація та терміновий ремонт у будь-який час."
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: "Сертифікації",
-      description: "Сертифіковано за стандартами ISO 9001 та 14001 для гарантії якості."
+      title: "Гарантія якості",
+      description: "Гарантія на всі види робіт та запчастини."
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Експертна команда",
-      description: "Персонал навчений і має досвід у всіх видах професійного прибирання."
+      title: "Оригінальні запчастини",
+      description: "Використовуємо тільки якісні та сертифіковані деталі."
     },
     {
       icon: <ThumbsUp className="h-6 w-6" />,
-      title: "Задоволені клієнти",
-      description: "Більше 95% наших клієнтів довіряють нам повторно щороку."
+      title: "Довіра клієнтів",
+      description: "Понад 90% клієнтів повертаються до нас знову."
     }
   ];
 
   const clientTypes = [
-    "Офіси", "Готелі", "Клініки", "Заводи", "Магазини",
-    "Школи", "Ресторани", "Лабораторії", "Паркінги", "Будівельні майданчики"
+    "Mercedes-Benz", "Volvo", "MAN", "Scania", "DAF",
+    "Iveco", "Renault Trucks", "KAMAZ", "MAZ", "Hyundai Trucks"
   ];
 
   return (
@@ -139,7 +139,7 @@ const About = () => {
                 transition={{ duration: 0.6 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6"
               >
-                Наша історія
+                Про нас
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -147,7 +147,7 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
               >
-                Дізнайтеся про історію Ecoclean Pro та наше зобов'язання щодо професійного й екологічного прибирання
+                Дізнайтеся про Kalaur Service - провідний сервісний центр з ремонту та обслуговування вантажних автомобілів
               </motion.p>
             </div>
           </div>
@@ -169,7 +169,7 @@ const About = () => {
               Наша місія
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
-              В Ecoclean Pro ми надаємо професійні послуги прибирання, що поважають довкілля та забезпечують відмінний результат.
+              В Kalaur Service ми надаємо професійні послуги з ремонту та обслуговування вантажних автомобілів, забезпечуючи надійність та безпеку на дорозі.
             </p>
           </motion.div>
 
@@ -178,23 +178,23 @@ const About = () => {
             {[
               {
                 icon: <Leaf className="h-6 w-6 sm:h-8 sm:w-8" />,
-                  title: "Екологічно",
-                description: "Засоби, що поважають довкілля"
+                  title: "Якісно",
+                description: "Оригінальні запчастини"
               },
               {
                 icon: <Users className="h-6 w-6 sm:h-8 sm:w-8" />,
                   title: "Професійно",
-                description: "Кваліфікована та досвідчена команда"
+                description: "Досвідчені механіки"
               },
               {
                 icon: <Clock className="h-6 w-6 sm:h-8 sm:w-8" />,
-                  title: "Ефективно",
-                description: "Швидкий та результативний сервіс"
+                  title: "Швидко",
+                description: "Оперативний ремонт"
               },
               {
                 icon: <Shield className="h-6 w-6 sm:h-8 sm:w-8" />,
                   title: "Надійно",
-                description: "Гарантія якості"
+                description: "Гарантія на роботи"
               }
             ].map((value, index) => (
               <motion.div

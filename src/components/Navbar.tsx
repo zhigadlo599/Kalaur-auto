@@ -74,13 +74,13 @@ const Navbar = () => {
     { 
       label: "Послуги", 
       dropdown: [
-        { label: "Прибирання паркінгів", href: "/services/parking" },
-        { label: "Прибирання офісів", href: "/services/bureaux" },
-        { label: "Прибирання клінік", href: "/services/cliniques" },
-        { label: "Миття вітрин", href: "/services/vitrerie" },
-        { label: "Прибирання після аварій", href: "/services/sinistres" },
-        { label: "Прибирання на будмайданчику", href: "/services/chantier" },
-        { label: "Дезінфекція та дератизація", href: "/services/desinfection" }
+        { label: "Комп'ютерна діагностика", href: "/services/diagnostics" },
+        { label: "Ремонт двигуна", href: "/services/engine-repair" },
+        { label: "Ремонт трансмісії", href: "/services/transmission" },
+        { label: "Гальмівна система", href: "/services/brake-system" },
+        { label: "Ремонт підвіски", href: "/services/suspension" },
+        { label: "Електрообладнання", href: "/services/electrical" },
+        { label: "ТО та обслуговування", href: "/services/maintenance" }
       ]
     },
     { label: "Блог", href: "/blog" },
@@ -157,12 +157,22 @@ const Navbar = () => {
           )}
           <Link to="/" className="flex items-center group">
             <motion.div 
-              className="h-8 sm:h-10 md:h-12 w-auto relative"
+              className="h-8 sm:h-10 md:h-12 flex items-center gap-2 relative"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <div className="absolute inset-0 bg-eco-green-500/10 rounded-full blur-xl group-hover:bg-eco-green-500/20 transition-all duration-300"></div>
-              <img src="/logo.png" alt="EcoClean ProMax Logo" className="h-full relative z-10" />
+              <div className="relative z-10 flex items-center gap-2">
+                <div className="h-8 sm:h-10 md:h-12 w-8 sm:w-10 md:w-12 bg-gradient-to-br from-eco-green-500 to-eco-green-700 rounded-lg flex items-center justify-center shadow-lg">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div className="hidden sm:flex flex-col">
+                  <span className="text-lg font-bold text-gray-900 leading-tight">Kalaur</span>
+                  <span className="text-xs font-semibold text-eco-green-600 leading-tight">SERVICE</span>
+                </div>
+              </div>
             </motion.div>
           </Link>
         </div>

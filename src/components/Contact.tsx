@@ -15,13 +15,13 @@ import {
 } from "@/components/ui/select";
 
 const services = [
-  { id: "parking", name: "Прибирання паркінгів", icon: Building2 },
-  { id: "bureaux", name: "Прибирання офісів", icon: Building2 },
-  { id: "cliniques", name: "Прибирання клінік", icon: Building2 },
-  { id: "vitrerie", name: "Миття вітрин", icon: Building2 },
-  { id: "sinistres", name: "Прибирання після аварій", icon: Building2 },
-  { id: "chantier", name: "Прибирання на будмайданчику", icon: Building2 },
-  { id: "desinfection", name: "Дезінфекція та дератизація", icon: Building2 }
+  { id: "diagnostics", name: "Комп'ютерна діагностика", icon: Building2 },
+  { id: "engine-repair", name: "Ремонт двигуна", icon: Building2 },
+  { id: "transmission", name: "Ремонт трансмісії", icon: Building2 },
+  { id: "brake-system", name: "Ремонт гальмівної системи", icon: Building2 },
+  { id: "suspension", name: "Ремонт підвіски", icon: Building2 },
+  { id: "electrical", name: "Ремонт електрообладнання", icon: Building2 },
+  { id: "maintenance", name: "ТО та обслуговування", icon: Building2 }
 ];
 
 const Contact = () => {
@@ -499,6 +499,74 @@ const Contact = () => {
               </CardContent>
             </motion.div>
           </motion.div>
+        </motion.div>
+
+        {/* Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 max-w-6xl mx-auto"
+        >
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-eco-green-100/20">
+            <div className="p-6 bg-gradient-to-r from-eco-green-500 to-eco-green-600">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-6 w-6 text-white" />
+                <div>
+                  <h3 className="text-xl font-bold text-white">Наша адреса</h3>
+                  <p className="text-white/90 text-sm">м. Житомир, вул. Парникова 18</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative w-full h-[400px] md:h-[500px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.8!2d28.6545!3d50.2543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE1JzE1LjUiTiAyOMKwMzknMTYuMiJF!5e0!3m2!1suk!2sua!4v1640000000000!5m2!1suk!2sua"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Kalaur Service Location"
+              />
+            </div>
+            <div className="p-6 bg-gradient-to-br from-gray-50 to-white">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-eco-green-100 rounded-lg">
+                    <Phone className="h-5 w-5 text-eco-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-700">Телефон</p>
+                    <a href="tel:+380501234567" className="text-eco-green-600 hover:text-eco-green-700 font-medium">
+                      +380 50 123 45 67
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-eco-green-100 rounded-lg">
+                    <Mail className="h-5 w-5 text-eco-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-700">Email</p>
+                    <a href="mailto:info@kalaur-auto.com" className="text-eco-green-600 hover:text-eco-green-700 font-medium">
+                      info@kalaur-auto.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-eco-green-100 rounded-lg">
+                    <Clock className="h-5 w-5 text-eco-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-700">Графік роботи</p>
+                    <p className="text-gray-600">Пн-Нд: 24/7</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

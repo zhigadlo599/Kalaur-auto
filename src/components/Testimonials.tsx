@@ -2,23 +2,23 @@ export { default } from './TestimonialsFixed';
 
 const testimonials = [
   {
-    name: "Софія Мартін",
-    role: "Директор закладу",
-    content: "Винятковий сервіс! Команда професійна, результати — бездоганні. Рекомендую.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&auto=format"
-  },
-  {
-    name: "Томас Дюбуа",
-    role: "Керівник ресторану",
-    content: "Ефективні екологічні рішення та дуже компетентний персонал. Наш ресторан ніколи не був таким чистим!",
+    name: "Олександр Петренко",
+    role: "Власник транспортної компанії",
+    content: "Відмінний сервіс! Команда професіоналів швидко та якісно виконала капітальний ремонт двигуна. Автомобіль працює як новий!",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&auto=format"
   },
   {
-    name: "Марі Лоран",
-    role: "Власник клініки",
-    content: "Надійний партнер для прибирання нашої клініки. Ідеальна гігієна та дотримання протоколів.",
+    name: "Сергій Коваленко",
+    role: "Водій-далекобійник",
+    content: "Звертаюся до Kalaur Service вже 3 роки. Завжди якісний ремонт, чесні ціни та дотримання термінів. Рекомендую!",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&auto=format"
+  },
+  {
+    name: "Ірина Морозова",
+    role: "Керівник автопарку",
+    content: "Надійний партнер для обслуговування нашого автопарку. Професійний підхід, сучасне обладнання та гарантія якості.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&auto=format"
   }
@@ -95,7 +95,7 @@ const Testimonials = () => {
                   transition={{ delay: 0.3, duration: 0.6 }}
                   className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900"
                 >
-                  Що говорять наші клієнти
+                  Відгуки наших клієнтів
                 </motion.h2>
               </motion.div>
 

@@ -43,18 +43,18 @@ const Footer: React.FC = () => {
   };
 
   const services: FooterLink[] = [
-    { label: "Прибирання паркінгів", href: "/services/parking" },
-    { label: "Прибирання офісів", href: "/services/bureaux" },
-    { label: "Прибирання клінік", href: "/services/cliniques" },
-    { label: "Миття вітрин", href: "/services/vitrerie" },
-    { label: "Прибирання після надзвичайних подій", href: "/services/sinistres" }
+    { label: "Комп'ютерна діагностика", href: "/services/diagnostics" },
+    { label: "Ремонт двигуна", href: "/services/engine-repair" },
+    { label: "Ремонт трансмісії", href: "/services/transmission" },
+    { label: "Гальмівна система", href: "/services/brake-system" },
+    { label: "ТО та обслуговування", href: "/services/maintenance" }
   ];
 
   const usefulLinks: FooterLink[] = [
     { label: "Про нас", href: "/#about" },
     { label: "Відгуки", href: "/#testimonials" },
     { label: "Контакти", href: "/#contact" },
-    { label: "Безкоштовний кошторис", href: "/#contact" }
+    { label: "Безкоштовна діагностика", href: "/#contact" }
   ];
 
   const handleNavigation = (href: string) => {

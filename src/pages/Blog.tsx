@@ -14,94 +14,94 @@ import {
 // Дані статей (можна замінити на API пізніше)
 const blogPosts = [
   {
-    title: "Як зберегти будинок чистим та здоровим",
-    author: "Патрик",
-    date: "11 Травня 2025",
-    category: "Прибирання вдома",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1920",
-    slug: "nettoyage-a-domicile",
-    excerpt: "Чистий дім — запорука здорового життя. Прості поради, щоб підтримувати чистоту без зайвого клопоту."
+    title: "Як правильно обслуговувати дизельний двигун вантажівки",
+    author: "Сергій Коваленко",
+    date: "15 Грудня 2025",
+    category: "Технічне обслуговування",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=1920",
+    slug: "diesel-engine-maintenance",
+    excerpt: "Регулярне ТО дизельного двигуна - запорука довгого терміну служби вашої вантажівки. Поради від експертів."
   },
   {
-    title: "Чому гігієна дому впливає на наше благополуччя",
-    author: "Патрик",
-    date: "31 Березня 2022",
-    category: "Прибирання вдома",
-    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&q=80&w=1920",
-    slug: "hygiene-domestique-bien-etre",
-    excerpt: "Гігієна оточення впливає на фізичне та психічне здоров'я. Дізнайтеся чому і як це покращити."
+    title: "Ознаки зношування гальмівної системи: коли час на ремонт",
+    author: "Олексій Мельник",
+    date: "10 Грудня 2025",
+    category: "Безпека",
+    image: "https://images.unsplash.com/photo-1632823469850-464a8be0496b?auto=format&fit=crop&q=80&w=1920",
+    slug: "brake-system-warning-signs",
+    excerpt: "Дізнайтеся про критичні симптоми проблем з гальмами, які не можна ігнорувати."
   },
   {
-    title: "Як зробити дім завжди приємно пахнучим",
-    author: "Патрик",
-    date: "31 Березня 2022",
-    category: "Прибирання вдома",
-    image: "https://images.unsplash.com/photo-1583845112239-97ef1341b271?auto=format&fit=crop&q=80&w=1920",
-    slug: "interieur-qui-sent-bon",
-    excerpt: "Поради для підтримки свіжого та приємного запаху в оселі без шкідливих хімікатів."
+    title: "Вибір правильного моторного масла для вантажного автомобіля",
+    author: "Ігор Петренко",
+    date: "5 Грудня 2025",
+    category: "Технічне обслуговування",
+    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=1920",
+    slug: "choosing-engine-oil",
+    excerpt: "Від правильного вибору масла залежить ресурс двигуна. Гід по вибору оптимального мастила."
   },
   {
-    title: "Поширені помилки при прибиранні і як їх уникнути",
-    author: "Патрик",
-    date: "30 Березня 2022",
-    category: "Прибирання вдома",
-    image: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&q=80&w=1920",
-    slug: "erreurs-menage",
-    excerpt: "Дізнайтеся про помилки, які можуть ускладнити прибирання, і як їх виправити."
+    title: "Топ-5 причин несправностей турбокомпресора",
+    author: "Максим Ткаченко",
+    date: "1 Грудня 2025",
+    category: "Діагностика",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
+    slug: "turbo-problems",
+    excerpt: "Турбіна - дороге обладнання. Дізнайтеся про основні причини виходу з ладу та як їх запобігти."
   },
   {
-    title: "Секрети ефективного прибирання офісу",
-    author: "Патрик",
-    date: "15 Квітня 2025",
-    category: "Професійне прибирання",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1920",
-    slug: "nettoyage-bureau-efficace",
-    excerpt: "Професійні методики для підтримки робочого простору чистим і безпечним."
+    title: "Підготовка вантажівки до зими: чек-лист",
+    author: "Андрій Савченко",
+    date: "28 Листопада 2025",
+    category: "Сезонне обслуговування",
+    image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&q=80&w=1920",
+    slug: "winter-truck-preparation",
+    excerpt: "Повний чек-лист підготовки вантажного автомобіля до зимової експлуатації."
   },
   {
-    title: "Прибирання комерційних приміщень: повний посібник",
-    author: "Патрик",
-    date: "10 Квітня 2025",
-    category: "Професійне прибирання",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1920",
-    slug: "nettoyage-espaces-commerciaux",
-    excerpt: "Детальний довідник з прибирання та обслуговування комерційних приміщень будь-якого розміру."
+    title: "Діагностика пневматичної підвіски: що потрібно знати",
+    author: "Віталій Романенко",
+    date: "22 Листопада 2025",
+    category: "Діагностика",
+    image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80&w=1920",
+    slug: "pneumatic-suspension-diagnostics",
+    excerpt: "Особливості діагностики та ремонту пневмопідвіски вантажних автомобілів."
   },
   {
-    title: "10 порад для швидкого та ефективного прибирання",
-    author: "Патрик",
-    date: "5 Квітня 2025",
-    category: "Поради",
-    image: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&q=80&w=1920",
-    slug: "astuces-nettoyage-rapide",
-    excerpt: "Прості і дієві поради, щоб заощадити час під час щоденних робіт з прибирання."
+    title: "Коли потрібна заміна зчеплення: симптоми і рекомендації",
+    author: "Дмитро Кравченко",
+    date: "18 Листопада 2025",
+    category: "Ремонт",
+    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1920",
+    slug: "clutch-replacement-signs",
+    excerpt: "Як розпізнати зношене зчеплення та чому важливо не затягувати з ремонтом."
   },
   {
-    title: "Як організувати свій час для прибирання",
-    author: "Патрик",
-    date: "1 Квітня 2025",
-    category: "Поради",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1920",
-    slug: "organiser-temps-menage",
-    excerpt: "Як планувати та оптимізувати час для регулярного й ефективного прибирання."
+    title: "Економія палива: 10 практичних порад для водіїв вантажівок",
+    author: "Юрій Семенов",
+    date: "12 Листопада 2025",
+    category: "Економія",
+    image: "https://images.unsplash.com/photo-1632823470677-9d1337baf635?auto=format&fit=crop&q=80&w=1920",
+    slug: "fuel-economy-tips",
+    excerpt: "Перевірені способи зменшення витрати палива без втрати продуктивності."
   },
   {
-    title: "Найкращі екологічні засоби для прибирання",
-    author: "Патрик",
-    date: "25 Березня 2025",
-    category: "Екологічні продукти",
-    image: "https://images.unsplash.com/photo-1583845112239-97ef1341b271?auto=format&fit=crop&q=80&w=1920",
-    slug: "produits-nettoyage-ecologiques",
-    excerpt: "Наша добірка найкращих екологічних засобів для безпечного прибирання."
+    title: "Електрична система вантажівки: найчастіші несправності",
+    author: "Володимир Лисенко",
+    date: "8 Листопада 2025",
+    category: "Діагностика",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
+    slug: "electrical-system-problems",
+    excerpt: "Огляд типових електричних проблем та методів їх вирішення."
   },
   {
-    title: "Як виготовити натуральні засоби для прибирання",
-    author: "Патрик",
-    date: "20 Березня 2025",
-    category: "Екологічні продукти",
-    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&q=80&w=1920",
-    slug: "fabriquer-produits-naturels",
-    excerpt: "Практичний посібник зі створення власних екологічних засобів для прибирання вдома."
+    title: "Важливість регулярного технічного огляду для вантажівок",
+    author: "Олександр Бондаренко",
+    date: "2 Листопада 2025",
+    category: "Технічне обслуговування",
+    image: "https://images.unsplash.com/photo-1632823469850-464a8be0496b?auto=format&fit=crop&q=80&w=1920",
+    slug: "importance-of-regular-maintenance",
+    excerpt: "Чому регулярне ТО економить ваші гроші та продовжує термін служби техніки."
   }
 ];
 
