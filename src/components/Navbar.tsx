@@ -93,7 +93,11 @@ const Navbar = () => {
     
     // Si c'est un lien vers la page d'accueil
     if (href === '/') {
-      navigate('/');
+      if (location.pathname !== '/') {
+        navigate('/');
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       return;
     }
 
