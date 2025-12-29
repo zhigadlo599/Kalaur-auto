@@ -278,7 +278,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 overflow-hidden bg-gradient-to-b from-eco-green-50/30 to-white">
+    <section id="testimonials" className="relative py-16 sm:py-20 overflow-hidden bg-gradient-to-b from-eco-green-50/30 to-white">
       {/* 3D Background */}
       <div 
         ref={containerRef} 
