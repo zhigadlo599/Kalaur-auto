@@ -18,7 +18,7 @@ const blogPosts = [
     author: "Сергій Коваленко",
     date: "15 Грудня 2025",
     category: "Технічне обслуговування",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/diesel-engine-maintenance.jpg",
     slug: "diesel-engine-maintenance",
     excerpt: "Регулярне ТО дизельного двигуна - запорука довгого терміну служби вашої вантажівки. Поради від експертів."
   },
@@ -27,7 +27,7 @@ const blogPosts = [
     author: "Олексій Мельник",
     date: "10 Грудня 2025",
     category: "Безпека",
-    image: "https://images.unsplash.com/photo-1632823469850-464a8be0496b?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/brake-system-warning-signs.jpg",
     slug: "brake-system-warning-signs",
     excerpt: "Дізнайтеся про критичні симптоми проблем з гальмами, які не можна ігнорувати."
   },
@@ -36,7 +36,7 @@ const blogPosts = [
     author: "Ігор Петренко",
     date: "5 Грудня 2025",
     category: "Технічне обслуговування",
-    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/choosing-engine-oil.jpg",
     slug: "choosing-engine-oil",
     excerpt: "Від правильного вибору масла залежить ресурс двигуна. Гід по вибору оптимального мастила."
   },
@@ -45,7 +45,7 @@ const blogPosts = [
     author: "Максим Ткаченко",
     date: "1 Грудня 2025",
     category: "Діагностика",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/turbo-problems.jpg",
     slug: "turbo-problems",
     excerpt: "Турбіна - дороге обладнання. Дізнайтеся про основні причини виходу з ладу та як їх запобігти."
   },
@@ -54,7 +54,7 @@ const blogPosts = [
     author: "Андрій Савченко",
     date: "28 Листопада 2025",
     category: "Сезонне обслуговування",
-    image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/winter-truck-preparation.jpg",
     slug: "winter-truck-preparation",
     excerpt: "Повний чек-лист підготовки вантажного автомобіля до зимової експлуатації."
   },
@@ -63,7 +63,7 @@ const blogPosts = [
     author: "Віталій Романенко",
     date: "22 Листопада 2025",
     category: "Діагностика",
-    image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/pneumatic-suspension-diagnostics.jpg",
     slug: "pneumatic-suspension-diagnostics",
     excerpt: "Особливості діагностики та ремонту пневмопідвіски вантажних автомобілів."
   },
@@ -72,7 +72,7 @@ const blogPosts = [
     author: "Дмитро Кравченко",
     date: "18 Листопада 2025",
     category: "Ремонт",
-    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/clutch-replacement-signs.jpg",
     slug: "clutch-replacement-signs",
     excerpt: "Як розпізнати зношене зчеплення та чому важливо не затягувати з ремонтом."
   },
@@ -81,7 +81,7 @@ const blogPosts = [
     author: "Юрій Семенов",
     date: "12 Листопада 2025",
     category: "Економія",
-    image: "https://images.unsplash.com/photo-1632823470677-9d1337baf635?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/fuel-economy-tips.jpg",
     slug: "fuel-economy-tips",
     excerpt: "Перевірені способи зменшення витрати палива без втрати продуктивності."
   },
@@ -90,7 +90,7 @@ const blogPosts = [
     author: "Володимир Лисенко",
     date: "8 Листопада 2025",
     category: "Діагностика",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/electrical-system-problems.jpg",
     slug: "electrical-system-problems",
     excerpt: "Огляд типових електричних проблем та методів їх вирішення."
   },
@@ -99,7 +99,7 @@ const blogPosts = [
     author: "Олександр Бондаренко",
     date: "2 Листопада 2025",
     category: "Технічне обслуговування",
-    image: "https://images.unsplash.com/photo-1632823469850-464a8be0496b?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/importance-of-regular-maintenance.jpg",
     slug: "importance-of-regular-maintenance",
     excerpt: "Чому регулярне ТО економить ваші гроші та продовжує термін служби техніки."
   }
@@ -190,7 +190,6 @@ const Blog = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center bg-eco-green-100 px-4 py-2 rounded-full text-eco-green-700 font-medium text-sm mb-4">
-              <Leaf className="mr-2 h-4 w-4" />
               <span>Наш блог</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">

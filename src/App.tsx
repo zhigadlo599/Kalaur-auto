@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -11,6 +11,35 @@ import NotFound from "./pages/NotFound";
 import LoadingScreen from './components/LoadingScreen';
 import ServicePage from './pages/services/ServicePage';
 import Layout from './components/Layout';
+
+const ScrollManager = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const targetId = hash.replace('#', '');
+      let attempts = 0;
+
+      const tryScroll = () => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+
+        attempts += 1;
+        if (attempts < 10) requestAnimationFrame(tryScroll);
+      };
+
+      requestAnimationFrame(tryScroll);
+      return;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname, hash]);
+
+  return null;
+};
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +63,7 @@ const App = () => {
             <Toaster />
             <Sonner />
             <BrowserRouter>
+              <ScrollManager />
               <Routes>
                 <Route element={<Layout />}>
                   <Route path="/" element={<Index />} />

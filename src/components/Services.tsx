@@ -37,7 +37,7 @@ const Services: React.FC = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
 
     const sectionElement = document.getElementById('services');
@@ -52,27 +52,26 @@ const Services: React.FC = () => {
     };
   }, []);
 
-  // Variants d'animation pour la grille de services
+  // Variants д'animation pour la grille de services
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 0, x: 80 },
     visible: {
-      y: 0,
       opacity: 1,
+      x: 0,
       transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 15,
+        duration: 0.6,
+        ease: [0.21, 0.47, 0.32, 0.98],
       },
     },
   };
@@ -120,19 +119,18 @@ const Services: React.FC = () => {
           className="text-center max-w-2xl mx-auto mb-16"
         >
             <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={isVisible ? { scale: 1, opacity: 1 } : {}}
-            transition={{ delay: 0.2, duration: 0.5 }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={isVisible ? { scale: 1, opacity: 1 } : {}}
+              transition={{ delay: 0.05, duration: 0.45 }}
             className="inline-flex items-center bg-eco-green-100 px-4 py-1.5 rounded-full text-eco-green-700 font-medium text-sm mb-4"
           >
-            <Leaf className="mr-2 h-4 w-4" />
             <span>Наші послуги</span>
           </motion.div>
 
           <motion.h2
             initial={{ y: 20, opacity: 0 }}
             animate={isVisible ? { y: 0, opacity: 1 } : {}}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ delay: 0.08, duration: 0.45 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
             Рішення, що відповідають вашим потребам
@@ -141,14 +139,14 @@ const Services: React.FC = () => {
           <motion.div
             initial={{ width: 0 }}
             animate={isVisible ? { width: '5rem' } : {}}
-            transition={{ delay: 0.4, duration: 0.6 }}
+            transition={{ delay: 0.11, duration: 0.45 }}
             className="h-1 bg-eco-green-500 mx-auto mb-6"
           />
 
             <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={isVisible ? { y: 0, opacity: 1 } : {}}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ delay: 0.14, duration: 0.45 }}
             className="text-muted-foreground text-center"
           >
             Дізнайтеся про наш повний спектр професійних послуг, створених для задоволення всіх ваших потреб у прибиранні та обслуговуванні.
@@ -156,14 +154,11 @@ const Services: React.FC = () => {
         </motion.div>
 
         {/* Grille de services */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isVisible ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <div
+              key={index}
+            >
               <Card
                 className={cn(
                   'border-none shadow-lg hover:shadow-xl transition-all duration-500 h-full overflow-hidden group relative bg-white/80 backdrop-blur-sm',
@@ -223,35 +218,19 @@ const Services: React.FC = () => {
                     </div>
                     <ul className="space-y-3">
                       {service.features.map((feature, featureIndex) => (
-                        <motion.li
+                        <li
                           key={featureIndex}
-                          initial={{ x: -20, opacity: 0 }}
-                          animate={
-                            hoveredIndex === index
-                              ? { x: 0, opacity: 1 }
-                              : { x: -20, opacity: 0 }
-                          }
-                          transition={{ delay: featureIndex * 0.1 }}
                           className="flex items-start"
                         >
                           <div className="mr-3 mt-1.5 flex items-center justify-center">
-                            <motion.div
+                            <div
                               className="h-2 w-2 rounded-full bg-eco-green-500"
-                              animate={
-                                hoveredIndex === index
-                                  ? { scale: [1, 1.5, 1] }
-                                  : {}
-                              }
-                              transition={{
-                                duration: 1,
-                                repeat: Infinity,
-                              }}
                             />
                           </div>
                           <span className="text-sm text-foreground/80">
                             {feature}
                           </span>
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -305,9 +284,9 @@ const Services: React.FC = () => {
                   )}
                 </AnimatePresence>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

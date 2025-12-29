@@ -44,12 +44,22 @@
     scroll-behavior: smooth;
   }
 
+  html,
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-bold;
+  }
+  
+  /* Fix video loading to prevent flickering (підхід з Permanent) */
+  .hero-video {
+    opacity: 1 !important;
+    transition: none !important;
+    will-change: auto !important;
   }
 }
 

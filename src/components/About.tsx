@@ -25,8 +25,8 @@ const About = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Високоякісні зображення для промислового прибирання
-  const backgroundImage = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1920";
+  // Локальне зображення для hero секції (автомобільна тематика)
+  const backgroundImage = '/about-hero.jpg';
 
   // Animations
   const containerVariants = {
@@ -124,10 +124,10 @@ const About = () => {
     <div id="about" className="min-h-screen bg-gradient-to-br from-slate-50 to-white pt-16 md:pt-20 lg:pt-24">
       {/* Hero Section */}
       <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] w-full overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80')`,
+            backgroundImage: `url('${backgroundImage}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/50" />

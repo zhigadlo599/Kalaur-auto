@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Facebook, Instagram, Linkedin, Twitter, ArrowRight, Mail, Phone, MapPin, Clock, Sparkles, Leaf, ArrowUp } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, ArrowRight, Mail, Phone, MapPin, Clock, Sparkles, ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
@@ -357,7 +357,6 @@ const Footer: React.FC = () => {
               </div>
               
                 <div className="mt-4 flex items-center text-xs text-eco-green-300">
-                <Leaf className="h-3 w-3 mr-1" />
                 <span>Будьте в курсі нових акцій та пропозицій</span>
               </div>
             </div>

@@ -9,7 +9,7 @@ const blogPosts: Record<string, any> = {
     author: "Сергій Коваленко",
     date: "15 Грудня 2025",
     category: "Технічне обслуговування",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/diesel-engine-maintenance.jpg",
     content: `
       <h2>Чому важливе регулярне ТО дизельного двигуна</h2>
       <p>Дизельні двигуни вантажних автомобілів працюють в екстремальних умовах і потребують особливої уваги. Регулярне технічне обслуговування не лише продовжує термін служби двигуна, але й запобігає дорогим ремонтам.</p>
@@ -40,7 +40,7 @@ const blogPosts: Record<string, any> = {
     author: "Олексій Мельник",
     date: "10 Грудня 2025",
     category: "Безпека",
-    image: "https://images.unsplash.com/photo-1632823469850-464a8be0496b?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/brake-system-warning-signs.jpg",
     content: `
       <h2>Критичні симптоми проблем з гальмами</h2>
       <p>Гальмівна система - найважливіший елемент безпеки вантажного автомобіля. Ігнорування проблем може призвести до аварії з серйозними наслідками.</p>
@@ -71,7 +71,7 @@ const blogPosts: Record<string, any> = {
     author: "Ігор Петренко",
     date: "5 Грудня 2025",
     category: "Технічне обслуговування",
-    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/choosing-engine-oil.jpg",
     content: `
       <h2>Класифікація моторних масел</h2>
       <p>Вибір правильного масла критично важливий для довговічності дизельного двигуна вантажного автомобіля.</p>
@@ -101,7 +101,7 @@ const blogPosts: Record<string, any> = {
     author: "Максим Ткаченко",
     date: "1 Грудня 2025",
     category: "Діагностика",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/turbo-problems.jpg",
     content: `
       <h2>Основні причини виходу з ладу турбіни</h2>
       <p>Турбокомпресор - один з найдорожчих компонентів дизельного двигуна. Знання причин поломок допоможе уникнути дорогого ремонту.</p>
@@ -139,7 +139,7 @@ const blogPosts: Record<string, any> = {
     author: "Андрій Савченко",
     date: "28 Листопада 2025",
     category: "Сезонне обслуговування",
-    image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/winter-truck-preparation.jpg",
     content: `
       <h2>Комплексна підготовка до зимової експлуатації</h2>
       <p>Зима - найскладніший період для експлуатації вантажної техніки. Правильна підготовка допоможе уникнути проблем на дорозі.</p>
@@ -198,7 +198,7 @@ const blogPosts: Record<string, any> = {
     author: "Віталій Романенко",
     date: "22 Листопада 2025",
     category: "Діагностика",
-    image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/pneumatic-suspension-diagnostics.jpg",
     content: `
       <h2>Принцип роботи пневмопідвіски</h2>
       <p>Пневматична підвіска забезпечує комфорт, стабільність та можливість регулювання висоти автомобіля. Розуміння її роботи допомагає вчасно виявляти проблеми.</p>
@@ -254,7 +254,7 @@ const blogPosts: Record<string, any> = {
     author: "Дмитро Кравченко",
     date: "18 Листопада 2025",
     category: "Ремонт",
-    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/clutch-replacement-signs.jpg",
     content: `
       <h2>Як працює зчеплення вантажівки</h2>
       <p>Зчеплення - це вузол, що передає крутний момент від двигуна до коробки передач. У вантажних автомобілях воно працює під значними навантаженнями.</p>
@@ -314,7 +314,7 @@ const blogPosts: Record<string, any> = {
     author: "Юрій Семенов",
     date: "12 Листопада 2025",
     category: "Економія",
-    image: "https://images.unsplash.com/photo-1632823470677-9d1337baf635?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/fuel-economy-tips.jpg",
     content: `
       <h2>Чому важлива економія палива</h2>
       <p>Паливо - одна з найбільших статей витрат у вантажних перевезеннях. Економія навіть 10-15% може суттєво вплинути на прибутковість бізнесу.</p>
@@ -374,7 +374,7 @@ const blogPosts: Record<string, any> = {
     author: "Володимир Лисенко",
     date: "8 Листопада 2025",
     category: "Діагностика",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/electrical-system-problems.jpg",
     content: `
       <h2>Особливості електрики вантажних автомобілів</h2>
       <p>Сучасні вантажні автомобілі мають складну електричну систему з безліччю датчиків, контролерів та виконавчих механізмів. Розуміння типових проблем допомагає швидко їх діагностувати.</p>
@@ -503,7 +503,7 @@ const blogPosts: Record<string, any> = {
     author: "Олександр Бондаренко",
     date: "2 Листопада 2025",
     category: "Технічне обслуговування",
-    image: "https://images.unsplash.com/photo-1632823469850-464a8be0496b?auto=format&fit=crop&q=80&w=1920",
+    image: "/images/blog/importance-of-regular-maintenance.jpg",
     content: `
       <h2>Чому регулярне ТО - це економія</h2>
       <p>Багато власників вантажівок намагаються заощадити на технічному обслуговуванні, не розуміючи, що це призводить до значно більших витрат у майбутньому.</p>

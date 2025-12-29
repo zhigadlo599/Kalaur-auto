@@ -49,7 +49,7 @@ export const services: Service[] = [
       "Системи аналізу вихлопних газів"
     ],
     color: "from-eco-green-500 to-eco-green-600",
-    bannerImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/diagnostics.jpg"
   },
   {
     id: 'engine-repair',
@@ -84,7 +84,7 @@ export const services: Service[] = [
       "Динамометричні ключі"
     ],
     color: "from-eco-green-500 to-eco-green-600",
-    bannerImage: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/engine-repair.jpg"
   },
   {
     id: 'transmission',
@@ -119,7 +119,7 @@ export const services: Service[] = [
       "Динамометричні інструменти"
     ],
     color: "from-eco-green-600 to-eco-green-700",
-    bannerImage: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/transmission.jpg"
   },
   {
     id: 'brake-system',
@@ -154,7 +154,7 @@ export const services: Service[] = [
       "Діагностичні сканери"
     ],
     color: "from-eco-green-500 to-eco-green-600",
-    bannerImage: "https://images.unsplash.com/photo-1632823469850-464a8be0496b?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/brake-system.jpg"
   },
   {
     id: 'suspension',
@@ -189,7 +189,7 @@ export const services: Service[] = [
       "Спеціалізований інструмент"
     ],
     color: "from-eco-green-600 to-eco-green-700",
-    bannerImage: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/suspension.jpg"
   },
   {
     id: 'electrical',
@@ -224,7 +224,7 @@ export const services: Service[] = [
       "Спеціалізовані інструменти"
     ],
     color: "from-eco-green-500 to-eco-green-600",
-    bannerImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/electrical.jpg"
   },
   {
     id: 'tire-service',
@@ -259,7 +259,7 @@ export const services: Service[] = [
       "Вулканізатори"
     ],
     color: "from-eco-green-500 to-eco-green-600",
-    bannerImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/tire-service.jpg"
   },
   {
     id: 'maintenance',
@@ -294,6 +294,6 @@ export const services: Service[] = [
       "Діагностичні прилади"
     ],
     color: "from-eco-green-600 to-eco-green-700",
-    bannerImage: "https://images.unsplash.com/photo-1632823470677-9d1337baf635?auto=format&fit=crop&w=1920&q=80"
+    bannerImage: "/images/services/maintenance.jpg"
   }
 ];

@@ -9,8 +9,7 @@ import {
   Check, 
   ChevronRight, 
   Sparkles, 
-  ArrowDown,
-  Leaf
+  ArrowDown
 } from 'lucide-react';
 
 interface Service {
@@ -105,9 +104,6 @@ const ServicePage = () => {
             <div className="absolute inset-0 flex flex-col justify-end pb-4 sm:pb-6 md:pb-8 lg:pb-12">
               <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-3 mb-2 sm:mb-3 md:mb-4">
-                  <div className="flex h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 items-center justify-center rounded-full bg-eco-green-500 shadow-lg">
-                    <Leaf className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-white" />
-                  </div>
                   <div className="text-[10px] sm:text-xs md:text-sm font-medium uppercase tracking-wide text-white backdrop-blur-sm px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 rounded-full bg-black/50 border border-white/20">
                     Service
                   </div>
@@ -135,13 +131,13 @@ const ServicePage = () => {
                   variants={itemVariants}
                   className="mt-3 sm:mt-4 md:mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 md:gap-4"
                 >
-                  <Link to="/contact" className="w-full sm:w-auto">
+                  <Link to="/#contact" className="w-full sm:w-auto">
                     <Button 
                       size="default"
                       className="w-full sm:w-auto bg-white hover:bg-white/90 text-eco-green-800 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 text-xs sm:text-sm md:text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
                     >
                       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-                        Отримати кошторис
+                        Дізнатись ціну
                         <ArrowRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1" />
                       </span>
                     </Button>
@@ -181,31 +177,6 @@ const ServicePage = () => {
               <div className="absolute top-0 left-0 right-0 h-1/3 bg-white animate-scroll-down" />
             </div>
           </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Key Benefits Highlight */}
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16">
-        <motion.div 
-          variants={itemVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6"
-        >
-          {service.benefits.slice(0, 3).map((benefit, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg border border-slate-100 transition-all duration-200"
-            >
-              <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-eco-green-50 flex items-center justify-center">
-                  <Check className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-eco-green-600" />
-                </div>
-                <h3 className="font-semibold text-sm sm:text-base md:text-lg text-slate-800">Перевага {index + 1}</h3>
-              </div>
-              <p className="text-xs sm:text-sm md:text-base text-slate-600">{benefit}</p>
-            </motion.div>
-          ))}
         </motion.div>
       </div>
       
@@ -318,9 +289,6 @@ const ServicePage = () => {
               className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300"
             >
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-6">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-eco-green-50 flex items-center justify-center">
-                  <Leaf className="h-4 w-4 sm:h-5 sm:w-5 text-eco-green-600" />
-                </div>
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Наше професійне обладнання</h2>
               </div>
               
