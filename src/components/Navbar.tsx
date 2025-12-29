@@ -270,11 +270,11 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Button 
-              onClick={() => handleNavigation('/#contact')}
+                onClick={() => handleNavigation('/#contact')}
               className="ml-2 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 transition-all duration-300 flex items-center bg-eco-green-500 hover:bg-eco-green-600 text-white shadow-[0_4px_14px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] text-sm"
             >
               <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
-              Безкоштовний кошторис
+              Безкоштовна діагностика
             </Button>
           </motion.div>
         </div>
