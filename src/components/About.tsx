@@ -25,7 +25,7 @@ const About = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Images de haute qualité pour le nettoyage industriel
+  // Високоякісні зображення для промислового прибирання
   const backgroundImage = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1920";
 
   // Animations
@@ -85,39 +85,39 @@ const About = () => {
   const features = [
     {
       icon: <Shield className="h-6 w-6" />,
-      title: "Service Fiable",
-      description: "Des équipes qualifiées et disponibles pour des interventions dans les délais impartis."
+      title: "Надійний сервіс",
+      description: "Кваліфіковані команди, готові виконати роботи у вказані терміни."
     },
     {
       icon: <Leaf className="h-6 w-6" />,
-      title: "Produits Écologiques",
-      description: "Utilisation de produits respectueux de l'environnement pour un nettoyage responsable."
+      title: "Екологічні засоби",
+      description: "Використання засобів, що поважають довкілля, для відповідального прибирання."
     },
     {
       icon: <Clock className="h-6 w-6" />,
-      title: "Disponibilité 24/7",
-      description: "Un service client disponible à tout moment pour répondre à vos besoins urgents."
+      title: "Доступність 24/7",
+      description: "Служба підтримки доступна цілодобово для невідкладних потреб."
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: "Certifications",
-      description: "Certifié aux normes ISO 9001 et 14001 pour garantir un service de qualité."
+      title: "Сертифікації",
+      description: "Сертифіковано за стандартами ISO 9001 та 14001 для гарантії якості."
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Équipe Experte",
-      description: "Personnel formé et expérimenté dans tous les types de nettoyage professionnel."
+      title: "Експертна команда",
+      description: "Персонал навчений і має досвід у всіх видах професійного прибирання."
     },
     {
       icon: <ThumbsUp className="h-6 w-6" />,
-      title: "Satisfaction Client",
-      description: "Plus de 95% de nos clients renouvellent leur confiance année après année."
+      title: "Задоволені клієнти",
+      description: "Більше 95% наших клієнтів довіряють нам повторно щороку."
     }
   ];
 
   const clientTypes = [
-    "Bureaux", "Hôtels", "Cliniques", "Usines", "Commerces", 
-    "Écoles", "Restaurants", "Laboratoires", "Parkings", "Chantiers"
+    "Офіси", "Готелі", "Клініки", "Заводи", "Магазини",
+    "Школи", "Ресторани", "Лабораторії", "Паркінги", "Будівельні майданчики"
   ];
 
   return (
