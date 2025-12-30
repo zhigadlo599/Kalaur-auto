@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B3D2E"/>
+      <stop offset="0.55" stop-color="#1B6B4D"/>
+      <stop offset="1" stop-color="#0E513B"/>
+    </linearGradient>
+    <linearGradient id="panel1" x1="0" y1="0" x2="640" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0E513B"/>
+      <stop offset="1" stop-color="#0B3D2E"/>
+    </linearGradient>
+    <linearGradient id="panel2" x1="0" y1="0" x2="640" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1B6B4D"/>
+      <stop offset="1" stop-color="#0E513B"/>
+    </linearGradient>
+    <linearGradient id="panel3" x1="0" y1="0" x2="640" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2A8B62"/>
+      <stop offset="1" stop-color="#1B6B4D"/>
+    </linearGradient>
+
+    <filter id="soft" x="-40" y="-40" width="2000" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- Subtle circles for texture -->
+  <g opacity="0.16" filter="url(#soft)">
+    <circle cx="420" cy="320" r="220" fill="#FFFFFF"/>
+    <circle cx="1480" cy="760" r="260" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Three side-by-side panels -->
+  <rect x="0" y="0" width="640" height="1080" fill="url(#panel1)" opacity="0.85"/>
+  <rect x="640" y="0" width="640" height="1080" fill="url(#panel2)" opacity="0.85"/>
+  <rect x="1280" y="0" width="640" height="1080" fill="url(#panel3)" opacity="0.85"/>
+
+  <!-- Flag poles -->
+  <g opacity="0.65">
+    <rect x="290" y="170" width="14" height="740" rx="7" fill="#E8FFF6"/>
+    <rect x="930" y="170" width="14" height="740" rx="7" fill="#E8FFF6"/>
+    <rect x="1570" y="170" width="14" height="740" rx="7" fill="#E8FFF6"/>
+  </g>
+
+  <!-- Flags (stylized waves) -->
+  <g>
+    <!-- Left flag -->
+    <path d="M 304 230 C 370 210, 430 250, 500 230 C 560 212, 598 232, 626 246 L 626 460 C 570 440, 520 480, 454 460 C 394 442, 344 464, 304 476 Z" fill="#0A2F23" opacity="0.75"/>
+    <path d="M 304 220 C 372 200, 438 244, 506 222 C 566 204, 604 226, 626 240 L 626 444 C 574 424, 518 468, 452 448 C 392 430, 342 454, 304 466 Z" fill="#0B3D2E"/>
+
+    <!-- Middle flag -->
+    <path d="M 944 240 C 1010 220, 1070 260, 1140 240 C 1200 222, 1238 242, 1266 256 L 1266 470 C 1210 450, 1160 490, 1094 470 C 1034 452, 984 474, 944 486 Z" fill="#0A2F23" opacity="0.75"/>
+    <path d="M 944 230 C 1012 210, 1078 254, 1146 232 C 1206 214, 1244 236, 1266 250 L 1266 454 C 1214 434, 1158 478, 1092 458 C 1032 440, 982 464, 944 476 Z" fill="#1B6B4D"/>
+
+    <!-- Right flag -->
+    <path d="M 1584 250 C 1650 230, 1710 270, 1780 250 C 1840 232, 1878 252, 1906 266 L 1906 480 C 1850 460, 1800 500, 1734 480 C 1674 462, 1624 484, 1584 496 Z" fill="#0A2F23" opacity="0.75"/>
+    <path d="M 1584 240 C 1652 220, 1718 264, 1786 242 C 1846 224, 1884 246, 1906 260 L 1906 464 C 1854 444, 1798 488, 1732 468 C 1672 450, 1622 474, 1584 486 Z" fill="#2A8B62"/>
+  </g>
+
+  <!-- Kalaur logo text on flags -->
+  <g fill="#E8FFF6" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" text-anchor="middle">
+    <text x="470" y="330" font-size="64" font-weight="800" letter-spacing="-1">Kalaur</text>
+    <text x="470" y="380" font-size="24" font-weight="700" letter-spacing="6" opacity="0.9">SERVICE</text>
+
+    <text x="1110" y="340" font-size="64" font-weight="800" letter-spacing="-1">Kalaur</text>
+    <text x="1110" y="390" font-size="24" font-weight="700" letter-spacing="6" opacity="0.9">SERVICE</text>
+
+    <text x="1750" y="350" font-size="64" font-weight="800" letter-spacing="-1">Kalaur</text>
+    <text x="1750" y="400" font-size="24" font-weight="700" letter-spacing="6" opacity="0.9">SERVICE</text>
+  </g>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#000000" opacity="0.22"/>
+</svg>

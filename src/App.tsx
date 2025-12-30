@@ -13,6 +13,7 @@ import ServicePage from './pages/services/ServicePage';
 import Layout from './components/Layout';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
+import Admin from './pages/Admin';
 import { CartProvider } from '@/contexts/CartContext';
 
 const ScrollManager = () => {
@@ -73,6 +74,7 @@ const App = () => {
                     <Route path="/" element={<Index />} />
                     <Route path="/shop" element={<Shop />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/admin" element={<Admin />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogPost />} />
                     <Route path="/services/:id" element={<ServicePage />} />

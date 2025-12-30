@@ -25,8 +25,8 @@ const About = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Локальне зображення для hero секції (автомобільна тематика)
-  const backgroundImage = '/about-hero.jpg';
+  // Локальне зображення для hero секції
+  const backgroundImage = '/about-hero-flags.svg';
 
   // Animations
   const containerVariants = {

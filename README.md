@@ -63,6 +63,53 @@ git commit -m "Prepare for Vercel deploy"
 git push -u origin main
 ```
 
+## Магазин + адмін (Kalaur-auto)
+
+### 1) Де редагувати товари
+
+Базовий каталог живе в `src/data/shopProducts.ts`, але керування з адмінки працює через localStorage (оверрайди):
+
+- В адмінці можна змінювати `name`, `inStock`, `condition`.
+- `priceUah` навмисно не редагується в адмінці, щоб оплата Stripe (serverless) залишалась коректною.
+
+### 2) Як увійти в адмінку
+
+У шапці сайту натисніть **Вхід/Адмін** та введіть логін/пароль (після входу можна перейти в `/admin`).
+
+Важливо: для продакшену увімкнений server-side вхід через cookie-сесію (`/api/admin/login`) — так логін/пароль не зберігаються у фронтенд-коді. Для локальної розробки без Vercel Functions залишається fallback (SPA).
+
+Змінні середовища для адмін-входу (на хостингу):
+
+- `ADMIN_USERNAME` (default: `admi`)
+- `ADMIN_PASSWORD` (default: `admin`)
+- `ADMIN_SESSION_SECRET` (рекомендовано задати в production)
+
+### 2.1) Постійне збереження змін в товарах (база)
+
+Щоб керування товарами з адмінки працювало між різними пристроями/користувачами, оверрайди каталогу зберігаються в Vercel KV через `/api/catalog`.
+
+Якщо KV не налаштований, сайт автоматично використовує fallback на `localStorage`.
+
+Примітка: при підключенні Vercel KV потрібні KV env vars. На Vercel вони додаються автоматично після підключення KV до проєкту.
+
+### 3) Оплата Visa/Mastercard
+
+Оплата зроблена через Stripe Checkout (card). Для роботи на Vercel потрібно додати змінну середовища:
+
+- `STRIPE_SECRET_KEY`
+
+Після успішної оплати Stripe повертає на `/cart?success=1`.
+
+## Про Vercel Commerce (vercel/commerce)
+
+`vercel/commerce` — це окремий Next.js storefront, який за замовчуванням працює з Shopify (керування товарами — в адмінці Shopify). Якщо хочете перейти на Shopify + Vercel Commerce замість поточного Vite-магазину — це робиться як окрема міграція проєкту.
+
+## MedusaJS
+
+Якщо хочете повноцінну адмінку для товарів/складу/замовлень — рекомендовано підняти Medusa backend окремо і під’єднати цей storefront.
+
+Деталі та питання для узгодження: див. [MEDUSA.md](MEDUSA.md)
+
 ## Project Structure
 
 ```

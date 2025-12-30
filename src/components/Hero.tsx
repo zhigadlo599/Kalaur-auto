@@ -148,7 +148,7 @@ const Hero = () => {
           >
             <span className="reveal-text inline-block translate-y-8 opacity-0 transition-all duration-700 ease-out">Ремонт</span>{' '}
             <span className="inline-block relative text-emerald-300">
-              Вантажних Автомобілів
+              TIR SERVICE обслуговування вантажних автомобілів
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-emerald-400/50 rounded-full scale-x-0 origin-left transition-transform delay-1000 duration-700 ease-out reveal-underline" />
             </span>
           </motion.h1>

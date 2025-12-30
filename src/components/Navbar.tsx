@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Sparkles, ArrowLeft } from 'lucide-react';
+import React, { useMemo, useState, useEffect } from 'react';
+import { Menu, X, ChevronDown, Phone, Sparkles, ArrowLeft, ShoppingCart, LockKeyhole, LogOut } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,6 +11,10 @@ import { cn } from '@/lib/utils';
 import { services } from '@/data/services';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useCart } from '@/contexts/CartContext';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { clearAdminAuthed, isAdminAuthed, setAdminAuthed, verifyAdminCredentials } from '@/lib/adminAuth';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +23,86 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const location = useLocation();
   const navigate = useNavigate();
+  const { items } = useCart();
+
+  const cartCount = useMemo(() => items.reduce((sum, i) => sum + i.quantity, 0), [items]);
+
+  const [adminOpen, setAdminOpen] = useState(false);
+  const [adminUsername, setAdminUsername] = useState('');
+  const [adminPassword, setAdminPassword] = useState('');
+  const [adminAuthed, setAdminAuthedState] = useState(false);
+  const [adminError, setAdminError] = useState<string | null>(null);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  useEffect(() => {
+    setAdminAuthedState(isAdminAuthed());
+  }, []);
+
+  const handleAdminLogin = () => {
+    setAdminError(null);
+
+    (async () => {
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ username: adminUsername, password: adminPassword }),
+        });
+
+        if (!res.ok) {
+          // Local fallback (e.g. Vite dev without Vercel functions)
+          if (import.meta.env.DEV && verifyAdminCredentials(adminUsername, adminPassword)) {
+            setAdminAuthed();
+            setAdminAuthedState(true);
+            setAdminOpen(false);
+            setIsOpen(false);
+            navigate('/admin');
+            return;
+          }
+
+          setAdminError('Невірний логін або пароль');
+          return;
+        }
+
+        setAdminAuthed();
+        setAdminAuthedState(true);
+        setAdminOpen(false);
+        setIsOpen(false);
+        navigate('/admin');
+      } catch {
+        // Local fallback (e.g. Vite dev without Vercel functions)
+        if (!verifyAdminCredentials(adminUsername, adminPassword)) {
+          setAdminError('Невірний логін або пароль');
+          return;
+        }
+        setAdminAuthed();
+        setAdminAuthedState(true);
+        setAdminOpen(false);
+        setIsOpen(false);
+        navigate('/admin');
+      }
+    })();
+  };
+
+  const handleAdminLogout = () => {
+    (async () => {
+      try {
+        await fetch('/api/admin/logout', {
+          method: 'POST',
+          credentials: 'include',
+        });
+      } catch {
+        // ignore
+      } finally {
+        clearAdminAuthed();
+        setAdminAuthedState(false);
+        setAdminUsername('');
+        setAdminPassword('');
+        setAdminError(null);
+      }
+    })();
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,7 +149,11 @@ const Navbar = () => {
   }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => {
+      const next = !prev;
+      if (!next) setMobileServicesOpen(false);
+      return next;
+    });
   };
 
   const navItems = [
@@ -195,7 +283,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-1">
-          {navItems.map((item, index) => (
+          {navItems.filter((item) => item.href !== '/cart').map((item, index) => (
             item.dropdown ? (
               <DropdownMenu key={index}>
                 <DropdownMenuTrigger asChild>
@@ -247,6 +335,68 @@ const Navbar = () => {
             )
           ))}
           <div className="hidden lg:flex items-center ml-4">
+            <Dialog
+              open={adminOpen}
+              onOpenChange={(open) => {
+                setAdminOpen(open);
+                if (open) setAdminError(null);
+              }}
+            >
+              <DialogTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="mr-2 flex items-center gap-2 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-all duration-300 text-gray-700 hover:text-eco-green-600 hover:bg-eco-green-50/80 text-sm hover:shadow-sm"
+                >
+                  <LockKeyhole className="h-4 w-4" />
+                  <span>{adminAuthed ? 'Адмін' : 'Вхід'}</span>
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle>{adminAuthed ? 'Адмін доступ' : 'Вхід в адмінку'}</DialogTitle>
+                </DialogHeader>
+
+                {adminAuthed ? (
+                  <div className="flex items-center justify-between gap-2">
+                    <Button onClick={() => { setAdminOpen(false); navigate('/admin'); }} className="rounded-full">В адмінку</Button>
+                    <Button variant="outline" onClick={() => { handleAdminLogout(); setAdminOpen(false); }} className="rounded-full">
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Вийти
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <Input
+                        value={adminUsername}
+                        onChange={(e) => {
+                          setAdminUsername(e.target.value);
+                          setAdminError(null);
+                        }}
+                        placeholder="Логін"
+                        autoComplete="off"
+                      />
+                      <Input
+                        value={adminPassword}
+                        onChange={(e) => {
+                          setAdminPassword(e.target.value);
+                          setAdminError(null);
+                        }}
+                        placeholder="Пароль"
+                        type="password"
+                        autoComplete="off"
+                      />
+                    </div>
+                    {adminError ? <div className="text-sm text-destructive">{adminError}</div> : null}
+                    <Button onClick={handleAdminLogin} className="rounded-full w-full">Увійти</Button>
+                    <div className="text-xs text-gray-500">
+                      Вхід встановлює cookie-сесію (або локальний fallback в dev).
+                    </div>
+                  </div>
+                )}
+              </DialogContent>
+            </Dialog>
+
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -264,9 +414,28 @@ const Navbar = () => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="ml-2"
           >
-            <Button 
-                onClick={() => handleNavigation('/#contact')}
+            <Link
+              to="/cart"
+              aria-label="Відкрити кошик"
+              className="relative inline-flex items-center justify-center focus:outline-none transition-colors duration-300 p-2 rounded-full text-foreground hover:bg-eco-green-50/80 hover:shadow-sm"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 min-w-5 h-5 px-1 rounded-full bg-white text-eco-green-700 text-[10px] font-bold flex items-center justify-center border border-eco-green-100">
+                  {cartCount > 99 ? '99+' : cartCount}
+                </span>
+              )}
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button
+              onClick={() => handleNavigation('/#contact')}
               className="ml-2 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 transition-all duration-300 flex items-center bg-eco-green-500 hover:bg-eco-green-600 text-white shadow-[0_4px_14px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] text-sm"
             >
               Безкоштовна діагностика
@@ -274,16 +443,90 @@ const Navbar = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="lg:hidden focus:outline-none transition-colors duration-300 p-1.5 sm:p-2 rounded-lg text-foreground hover:bg-eco-green-50/80 hover:shadow-sm"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
-        </motion.button>
+        {/* Mobile actions (Cart + Menu) */}
+        <div className="lg:hidden flex items-center gap-2">
+          <Dialog
+            open={adminOpen}
+            onOpenChange={(open) => {
+              setAdminOpen(open);
+              if (open) setAdminError(null);
+            }}
+          >
+            <DialogTrigger asChild>
+              <button
+                aria-label={adminAuthed ? 'Адмін' : 'Вхід в адмінку'}
+                className="relative inline-flex items-center justify-center focus:outline-none transition-colors duration-300 p-1.5 sm:p-2 rounded-lg text-foreground hover:bg-eco-green-50/80 hover:shadow-sm"
+              >
+                <LockKeyhole size={20} className="sm:w-6 sm:h-6" />
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md">
+              <DialogHeader>
+                <DialogTitle>{adminAuthed ? 'Адмін доступ' : 'Вхід в адмінку'}</DialogTitle>
+              </DialogHeader>
+
+              {adminAuthed ? (
+                <div className="flex items-center justify-between gap-2">
+                  <Button onClick={() => { setAdminOpen(false); setIsOpen(false); navigate('/admin'); }} className="rounded-full">В адмінку</Button>
+                  <Button variant="outline" onClick={() => { handleAdminLogout(); setAdminOpen(false); }} className="rounded-full">
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Вийти
+                  </Button>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <Input
+                      value={adminUsername}
+                      onChange={(e) => {
+                        setAdminUsername(e.target.value);
+                        setAdminError(null);
+                      }}
+                      placeholder="Логін"
+                      autoComplete="off"
+                    />
+                    <Input
+                      value={adminPassword}
+                      onChange={(e) => {
+                        setAdminPassword(e.target.value);
+                        setAdminError(null);
+                      }}
+                      placeholder="Пароль"
+                      type="password"
+                      autoComplete="off"
+                    />
+                  </div>
+                  {adminError ? <div className="text-sm text-destructive">{adminError}</div> : null}
+                  <Button onClick={handleAdminLogin} className="rounded-full w-full">Увійти</Button>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
+
+          <Link
+            to="/cart"
+            aria-label="Відкрити кошик"
+            className="relative inline-flex items-center justify-center focus:outline-none transition-colors duration-300 p-1.5 sm:p-2 rounded-lg text-foreground hover:bg-eco-green-50/80 hover:shadow-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            <ShoppingCart size={20} className="sm:w-6 sm:h-6" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 min-w-5 h-5 px-1 rounded-full bg-white text-eco-green-700 text-[10px] font-bold flex items-center justify-center border border-eco-green-100">
+                {cartCount > 99 ? '99+' : cartCount}
+              </span>
+            )}
+          </Link>
+
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="focus:outline-none transition-colors duration-300 p-1.5 sm:p-2 rounded-lg text-foreground hover:bg-eco-green-50/80 hover:shadow-sm"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
+          </motion.button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -312,13 +555,6 @@ const Navbar = () => {
                   className="block text-sm sm:text-base font-medium text-gray-900 hover:text-eco-green-600 transition-colors duration-200 w-full text-left py-1.5 hover:bg-eco-green-50/50 rounded-lg px-2"
                 >
                   Магазин
-                </motion.button>
-                <motion.button
-                  whileHover={{ x: 5 }}
-                  onClick={() => handleNavigation('/cart')}
-                  className="block text-sm sm:text-base font-medium text-gray-900 hover:text-eco-green-600 transition-colors duration-200 w-full text-left py-1.5 hover:bg-eco-green-50/50 rounded-lg px-2"
-                >
-                  Кошик
                 </motion.button>
                 <motion.button
                   whileHover={{ x: 5 }}
@@ -356,19 +592,34 @@ const Navbar = () => {
 
               {/* Services avec déroulant */}
               <div className="space-y-2 border-t border-gray-100 pt-4">
-                <div className="font-medium text-gray-900 text-sm sm:text-base px-2">Послуги</div>
-                <div className="pl-4 space-y-2">
-                  {navItems.find(item => item.label === "Послуги")?.dropdown?.map((subItem, subIndex) => (
-                    <Link
-                      key={subIndex}
-                      to={subItem.href}
-                      className="block text-xs sm:text-sm text-gray-600 hover:text-eco-green-600 transition-colors duration-200 py-1.5 hover:bg-eco-green-50/50 rounded-lg px-2"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {subItem.label}
-                    </Link>
-                  ))}
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setMobileServicesOpen((v) => !v)}
+                  className="w-full flex items-center justify-between font-medium text-gray-900 text-sm sm:text-base px-2 py-1.5 rounded-lg hover:bg-eco-green-50/50 transition-colors"
+                  aria-expanded={mobileServicesOpen}
+                  aria-controls="mobile-services"
+                >
+                  <span>Послуги</span>
+                  <ChevronDown className={cn('h-4 w-4 transition-transform', mobileServicesOpen ? 'rotate-180' : '')} />
+                </button>
+
+                {mobileServicesOpen ? (
+                  <div id="mobile-services" className="pl-4 space-y-2">
+                    {navItems.find(item => item.label === "Послуги")?.dropdown?.map((subItem, subIndex) => (
+                      <Link
+                        key={subIndex}
+                        to={subItem.href}
+                        className="block text-xs sm:text-sm text-gray-600 hover:text-eco-green-600 transition-colors duration-200 py-1.5 hover:bg-eco-green-50/50 rounded-lg px-2"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setMobileServicesOpen(false);
+                        }}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
               </div>
               
               {/* Contact et Devis en bas */}

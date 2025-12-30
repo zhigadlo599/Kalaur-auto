@@ -6,6 +6,10 @@ export type ShopProduct = {
   condition: PartCondition;
   inStock: boolean;
   priceUah?: number;
+  sku?: string;
+  description?: string;
+  imageUrl?: string;
+  stockQty?: number;
 };
 
 export type CartItem = {
